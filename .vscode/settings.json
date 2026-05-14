@@ -1,0 +1,10 @@
+{
+    "cucumber.glue": [],
+    "cucumber.features": [],
+    "karateRunner.promptToSpecifyArgs": false,
+    "karateRunner.buildSystem": "Maven",
+    "karateRunner.buildDirectory": "target",
+    "karateRunner.featuresFilePath": "src/test/resources/features",
+    "karateRunner.karateCli": "mvn test -f pom.xml",
+    "java.configuration.updateBuildConfiguration": "automatic",
+}
