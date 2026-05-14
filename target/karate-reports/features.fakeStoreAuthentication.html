@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">0</div>
-      <div id="nav-fail" class="bg-danger">1</div>
+      <div id="nav-pass" class="bg-success">1</div>
+      <div id="nav-fail" class="bg-danger">0</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,12 +49,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-05-14 01:02:39 PM</div>
+    <div>2026-05-14 04:21:46 PM</div>
   </div>
 </div>
 
         <div class="nav-container">
-          <div class="nav-item failed">
+          <div class="nav-item passed">
             <a href="#[1:6]"><span>[1:6]</span> <span>User login</span></a>
           </div>
         </div>
@@ -80,8 +80,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time failed">
-              <span>ms:</span>&nbsp;<span>639</span>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>1055</span>
             </div>
           </div>
           <div class="step-row">
@@ -104,7 +104,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -113,8 +113,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">13:02:38.847 Running tests in environment: tst 
-13:02:38.847 Base URL: https://fakestoreapi.com 
+  <div class="preformatted" data-parent="0.4">16:21:45.304 Running tests in environment: tst 
+16:21:45.305 Base URL: https://fakestoreapi.com 
 </div>   
 
   
@@ -193,7 +193,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">638</div>
+    <div class="time-cell passed">1051</div>
   </div>
 
    
@@ -215,13 +215,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   <div class="step-row">
     <div class="step-container" id="0.16">
-      <div class="step-ref failed">16</div>
+      <div class="step-ref passed">16</div>
       
-      <div class="step-cell failed">
-        <span>Then</span>&nbsp;<span>status 200</span>
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 201</span>
       </div>
     </div>
-    <div class="time-cell failed">0</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -230,12 +230,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.16">13:02:39.488 classpath:features/fakeStoreAuthentication.feature:16
-Then status 200
-status code was: 201, expected: 200, response time in milliseconds: 634, url: https://fakestoreapi.com/auth/login, response: 
-{&quot;token&quot;:&quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3ODc1NjU1OX0.FPtCEKHghhaJzXQ25qFVC_KaPR0RQ7lk29IzGRNwWfo&quot;}
-classpath:features/fakeStoreAuthentication.feature:16
-</div>   
+     
 
   
 
@@ -248,13 +243,13 @@ classpath:features/fakeStoreAuthentication.feature:16
 
   <div class="step-row">
     <div class="step-container" id="0.17">
-      <div class="step-ref skipped">17</div>
+      <div class="step-ref passed">17</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>match response.token == &#39;#string&#39;</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -276,13 +271,13 @@ classpath:features/fakeStoreAuthentication.feature:16
 
   <div class="step-row">
     <div class="step-container" id="0.18">
-      <div class="step-ref skipped">18</div>
+      <div class="step-ref passed">18</div>
       
-      <div class="step-cell skipped">
+      <div class="step-cell passed">
         <span>And</span>&nbsp;<span>print &#39;Login Token:&#39;, response.token</span>
       </div>
     </div>
-    <div class="time-cell skipped">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -291,7 +286,8 @@ classpath:features/fakeStoreAuthentication.feature:16
 
   
 
-     
+  <div class="preformatted" data-parent="0.18">16:21:46.361 [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3ODc2ODUwNn0.l6Zg5-Aj315LYZB0DmeIbN7OQ-t2PX3mO_tKyz1MMc0 
+</div>   
 
   
 

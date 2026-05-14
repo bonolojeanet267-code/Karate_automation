@@ -13,6 +13,6 @@ Feature: Fake Store Authentication Tests
     }
     """
     When method POST
-    Then status 200
+    Then status 201
     And match response.token == '#string'
     And print 'Login Token:', response.token

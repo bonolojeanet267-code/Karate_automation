@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="runners.TestRunner" time="33.685" tests="10" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="runners.TestRunner" time="24.829" tests="34" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,9 +16,8 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.16_8\bin"/>
-    <property name="sun.java.command" value="C:\Users\Bonolo\AppData\Local\Temp\surefire4108197314116239154\surefirebooter-20260514144719807_3.jar C:\Users\Bonolo\AppData\Local\Temp\surefire4108197314116239154 2026-05-14T14-47-19_478-jvmRun1 surefire-20260514144719807_1tmp surefire_0-20260514144719807_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Bonolo\AppData\Local\Temp\surefire6467756778365460901\surefirebooter-20260514162121147_3.jar C:\Users\Bonolo\AppData\Local\Temp\surefire6467756778365460901 2026-05-14T16-21-20_932-jvmRun1 surefire-20260514162121147_1tmp surefire_0-20260514162121147_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="TestRunner#testFakeStoreAPI"/>
     <property name="surefire.test.class.path" value="C:\Users\Bonolo\Main.java\Documents\KarateProjects\karate-automation\target\test-classes;C:\Users\Bonolo\Main.java\Documents\KarateProjects\karate-automation\target\classes;C:\Users\Bonolo\.m2\repository\com\intuit\karate\karate-core\1.4.1\karate-core-1.4.1.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\js\js-scriptengine\22.3.3\js-scriptengine-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\sdk\graal-sdk\22.3.3\graal-sdk-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\js\js\22.3.3\js-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\regex\regex\22.3.3\regex-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\truffle\truffle-api\22.3.3\truffle-api-22.3.3.jar;C:\Users\Bonolo\.m2\repository\com\ibm\icu\icu4j\71.1\icu4j-71.1.jar;C:\Users\Bonolo\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\Bonolo\.m2\repository\ognl\ognl\3.3.4\ognl-3.3.4.jar;C:\Users\Bonolo\.m2\repository\org\javassist\javassist\3.29.0-GA\javassist-3.29.0-GA.jar;C:\Users\Bonolo\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Bonolo\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Bonolo\.m2\repository\com\linecorp\armeria\armeria\1.25.2\armeria-1.25.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\Bonolo\.m2\repository\io\micrometer\micrometer-core\1.11.3\micrometer-core-1.11.3.jar;C:\Users\Bonolo\.m2\repository\io\micrometer\micrometer-commons\1.11.3\micrometer-commons-1.11.3.jar;C:\Users\Bonolo\.m2\repository\io\micrometer\micrometer-observation\1.11.3\micrometer-observation-1.11.3.jar;C:\Users\Bonolo\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\Bonolo\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport\4.1.96.Final\netty-transport-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-haproxy\4.1.96.Final\netty-codec-haproxy-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-http2\4.1.96.Final\netty-codec-http2-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns\4.1.96.Final\netty-resolver-dns-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-dns\4.1.96.Final\netty-codec-dns-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Bonolo\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-handler-proxy\4.1.96.Final\netty-handler-proxy-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-socks\4.1.96.Final\netty-codec-socks-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.96.Final\netty-transport-classes-epoll-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.96.Final\netty-transport-classes-kqueue-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.96.Final\netty-resolver-dns-classes-macos-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-windows-x86_64.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\brotli4j\1.12.0\brotli4j-1.12.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\service\1.12.0\service-1.12.0.jar;C:\Users\Bonolo\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\Bonolo\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\Bonolo\.m2\repository\commons-codec\commons-codec\1.16.0\commons-codec-1.16.0.jar;C:\Users\Bonolo\.m2\repository\org\slf4j\jcl-over-slf4j\2.0.9\jcl-over-slf4j-2.0.9.jar;C:\Users\Bonolo\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar;C:\Users\Bonolo\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Bonolo\.m2\repository\net\minidev\json-smart\2.4.10\json-smart-2.4.10.jar;C:\Users\Bonolo\.m2\repository\net\minidev\accessors-smart\2.4.9\accessors-smart-2.4.9.jar;C:\Users\Bonolo\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Bonolo\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Bonolo\.m2\repository\de\siegmar\fastcsv\2.2.1\fastcsv-2.2.1.jar;C:\Users\Bonolo\.m2\repository\info\picocli\picocli\4.7.1\picocli-4.7.1.jar;C:\Users\Bonolo\.m2\repository\io\github\classgraph\classgraph\4.8.160\classgraph-4.8.160.jar;C:\Users\Bonolo\.m2\repository\io\github\t12y\resemble\1.0.2\resemble-1.0.2.jar;C:\Users\Bonolo\.m2\repository\io\github\t12y\ssim\1.0.0\ssim-1.0.0.jar;C:\Users\Bonolo\.m2\repository\com\intuit\karate\karate-junit5\1.4.1\karate-junit5-1.4.1.jar;C:\Users\Bonolo\.m2\repository\com\intuit\karate\karate-gatling\1.4.1\karate-gatling-1.4.1.jar;C:\Users\Bonolo\.m2\repository\io\gatling\highcharts\gatling-charts-highcharts\3.9.5\gatling-charts-highcharts-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-app\3.9.5\gatling-app-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-core-java\3.9.5\gatling-core-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\net\jodah\typetools\0.6.3\typetools-0.6.3.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-http-java\3.9.5\gatling-http-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jms\3.9.5\gatling-jms-3.9.5.jar;C:\Users\Bonolo\.m2\repository\javax\jms\javax.jms-api\2.0.1\javax.jms-api-2.0.1.jar;C:\Users\Bonolo\.m2\repository\com\eatthepath\fast-uuid\0.2.0\fast-uuid-0.2.0.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jms-java\3.9.5\gatling-jms-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-mqtt\3.9.5\gatling-mqtt-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-mqtt\4.1.92.Final\netty-codec-mqtt-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-mqtt-java\3.9.5\gatling-mqtt-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jdbc\3.9.5\gatling-jdbc-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jdbc-java\3.9.5\gatling-jdbc-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-redis\3.9.5\gatling-redis-3.9.5.jar;C:\Users\Bonolo\.m2\repository\net\debasishg\redisclient_2.13\3.42\redisclient_2.13-3.42.jar;C:\Users\Bonolo\.m2\repository\org\apache\commons\commons-pool2\2.8.0\commons-pool2-2.8.0.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-redis-java\3.9.5\gatling-redis-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-graphite\3.9.5\gatling-graphite-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-charts\3.9.5\gatling-charts-3.9.5.jar;C:\Users\Bonolo\.m2\repository\com\tdunning\t-digest\3.1\t-digest-3.1.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-recorder\3.9.5\gatling-recorder-3.9.5.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\modules\scala-swing_2.13\3.0.0\scala-swing_2.13-3.0.0.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-recorder-bc-shaded\1.73\gatling-recorder-bc-shaded-1.73.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-core\3.9.5\gatling-core-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-netty-util\3.9.5\gatling-netty-util-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jdk-util\3.9.5\gatling-jdk-util-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-buffer\4.1.92.Final\netty-buffer-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\incubator\netty-incubator-transport-native-io_uring\0.0.21.Final\netty-incubator-transport-native-io_uring-0.0.21.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\incubator\netty-incubator-transport-classes-io_uring\0.0.21.Final\netty-incubator-transport-classes-io_uring-0.0.21.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\incubator\netty-incubator-transport-native-io_uring\0.0.21.Final\netty-incubator-transport-native-io_uring-0.0.21.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-commons\3.9.5\gatling-commons-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-commons-shared\3.9.5\gatling-commons-shared-3.9.5.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\scala-reflect\2.13.10\scala-reflect-2.13.10.jar;C:\Users\Bonolo\.m2\repository\io\suzaku\boopickle_2.13\1.3.3\boopickle_2.13-1.3.3.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-commons-shared-unstable\3.9.5\gatling-commons-shared-unstable-3.9.5.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\config\1.4.2\config-1.4.2.jar;C:\Users\Bonolo\.m2\repository\org\typelevel\spire-macros_2.13\0.17.0\spire-macros_2.13-0.17.0.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\scala-logging\scala-logging_2.13\3.9.5\scala-logging_2.13-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jsonpath\3.9.5\gatling-jsonpath-3.9.5.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\akka\akka-actor_2.13\2.6.20\akka-actor_2.13-2.6.20.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\modules\scala-java8-compat_2.13\1.0.0\scala-java8-compat_2.13-1.0.0.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\akka\akka-slf4j_2.13\2.6.20\akka-slf4j_2.13-2.6.20.jar;C:\Users\Bonolo\.m2\repository\org\simpleflatmapper\lightning-csv\8.2.3\lightning-csv-8.2.3.jar;C:\Users\Bonolo\.m2\repository\org\simpleflatmapper\sfm-util\8.2.3\sfm-util-8.2.3.jar;C:\Users\Bonolo\.m2\repository\com\github\ben-manes\caffeine\caffeine\2.9.3\caffeine-2.9.3.jar;C:\Users\Bonolo\.m2\repository\org\checkerframework\checker-qual\3.19.0\checker-qual-3.19.0.jar;C:\Users\Bonolo\.m2\repository\com\google\errorprone\error_prone_annotations\2.10.0\error_prone_annotations-2.10.0.jar;C:\Users\Bonolo\.m2\repository\io\pebbletemplates\pebble\3.2.1\pebble-3.2.1.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\modules\scala-parser-combinators_2.13\2.3.0\scala-parser-combinators_2.13-2.3.0.jar;C:\Users\Bonolo\.m2\repository\com\github\scopt\scopt_2.13\3.7.1\scopt_2.13-3.7.1.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-handler\4.1.92.Final\netty-handler-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-common\4.1.92.Final\netty-common-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver\4.1.92.Final\netty-resolver-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.92.Final\netty-transport-native-unix-common-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec\4.1.92.Final\netty-codec-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-classes\2.0.61.Final\netty-tcnative-classes-2.0.61.Final.jar;C:\Users\Bonolo\.m2\repository\com\softwaremill\quicklens\quicklens_2.13\1.9.3\quicklens_2.13-1.9.3.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.0\jackson-databind-2.15.0.jar;C:\Users\Bonolo\.m2\repository\net\sf\saxon\Saxon-HE\10.6\Saxon-HE-10.6.jar;C:\Users\Bonolo\.m2\repository\org\jodd\jodd-lagarto\6.0.6\jodd-lagarto-6.0.6.jar;C:\Users\Bonolo\.m2\repository\org\jodd\jodd-util\6.1.0\jodd-util-6.1.0.jar;C:\Users\Bonolo\.m2\repository\io\burt\jmespath-jackson\0.5.1\jmespath-jackson-0.5.1.jar;C:\Users\Bonolo\.m2\repository\io\burt\jmespath-core\0.5.1\jmespath-core-0.5.1.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-http\3.9.5\gatling-http-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-http-client\3.9.5\gatling-http-client-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-http\4.1.92.Final\netty-codec-http-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-linux-x86_64\1.11.0\native-linux-x86_64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-linux-aarch64\1.11.0\native-linux-aarch64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-osx-x86_64\1.11.0\native-osx-x86_64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-osx-aarch64\1.11.0\native-osx-aarch64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-windows-x86_64\1.11.0\native-windows-x86_64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar;C:\Users\Bonolo\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Bonolo\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Bonolo\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Bonolo\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Bonolo\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Bonolo\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Bonolo\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Bonolo\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Bonolo\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\Bonolo"/>
@@ -32,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Bonolo\AppData\Local\Temp\surefire4108197314116239154\surefirebooter-20260514144719807_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Bonolo\AppData\Local\Temp\surefire6467756778365460901\surefirebooter-20260514162121147_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.16+8-LTS"/>
@@ -60,10 +59,592 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="25.358">
-    <system-out><![CDATA[14:47:25.290 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:25.296 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:48.589 [main] INFO  com.intuit.karate - [print] Response: [
+  <testcase name="[1:6] Get all users" classname="features/fakeStoreUsers" time="3.457">
+    <system-out><![CDATA[16:21:25.913 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:25.918 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:27.740 [main] INFO  com.intuit.karate - [print] Users: [
+  {
+    "address": {
+      "geolocation": {
+        "lat": "-37.3159",
+        "long": "81.1496"
+      },
+      "city": "kilcoole",
+      "street": "new road",
+      "number": 7682,
+      "zipcode": "12926-3874"
+    },
+    "id": 1,
+    "email": "john@gmail.com",
+    "username": "johnd",
+    "password": "m38rmF$",
+    "name": {
+      "firstname": "john",
+      "lastname": "doe"
+    },
+    "phone": "1-570-236-7033",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "-37.3159",
+        "long": "81.1496"
+      },
+      "city": "kilcoole",
+      "street": "Lovers Ln",
+      "number": 7267,
+      "zipcode": "12926-3874"
+    },
+    "id": 2,
+    "email": "morrison@gmail.com",
+    "username": "mor_2314",
+    "password": "83r5^_",
+    "name": {
+      "firstname": "david",
+      "lastname": "morrison"
+    },
+    "phone": "1-570-236-7033",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "40.3467",
+        "long": "-30.1310"
+      },
+      "city": "Cullman",
+      "street": "Frances Ct",
+      "number": 86,
+      "zipcode": "29567-1452"
+    },
+    "id": 3,
+    "email": "kevin@gmail.com",
+    "username": "kevinryan",
+    "password": "kev02937@",
+    "name": {
+      "firstname": "kevin",
+      "lastname": "ryan"
+    },
+    "phone": "1-567-094-1345",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "50.3467",
+        "long": "-20.1310"
+      },
+      "city": "San Antonio",
+      "street": "Hunters Creek Dr",
+      "number": 6454,
+      "zipcode": "98234-1734"
+    },
+    "id": 4,
+    "email": "don@gmail.com",
+    "username": "donero",
+    "password": "ewedon",
+    "name": {
+      "firstname": "don",
+      "lastname": "romer"
+    },
+    "phone": "1-765-789-6734",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "40.3467",
+        "long": "-40.1310"
+      },
+      "city": "san Antonio",
+      "street": "adams St",
+      "number": 245,
+      "zipcode": "80796-1234"
+    },
+    "id": 5,
+    "email": "derek@gmail.com",
+    "username": "derek",
+    "password": "jklg*_56",
+    "name": {
+      "firstname": "derek",
+      "lastname": "powell"
+    },
+    "phone": "1-956-001-1945",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "20.1677",
+        "long": "-10.6789"
+      },
+      "city": "el paso",
+      "street": "prospect st",
+      "number": 124,
+      "zipcode": "12346-0456"
+    },
+    "id": 6,
+    "email": "david_r@gmail.com",
+    "username": "david_r",
+    "password": "3478*#54",
+    "name": {
+      "firstname": "david",
+      "lastname": "russell"
+    },
+    "phone": "1-678-345-9856",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "10.3456",
+        "long": "20.6419"
+      },
+      "city": "fresno",
+      "street": "saddle st",
+      "number": 1342,
+      "zipcode": "96378-0245"
+    },
+    "id": 7,
+    "email": "miriam@gmail.com",
+    "username": "snyder",
+    "password": "f238&@*$",
+    "name": {
+      "firstname": "miriam",
+      "lastname": "snyder"
+    },
+    "phone": "1-123-943-0563",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "50.3456",
+        "long": "10.6419"
+      },
+      "city": "mesa",
+      "street": "vally view ln",
+      "number": 1342,
+      "zipcode": "96378-0245"
+    },
+    "id": 8,
+    "email": "william@gmail.com",
+    "username": "hopkins",
+    "password": "William56$hj",
+    "name": {
+      "firstname": "william",
+      "lastname": "hopkins"
+    },
+    "phone": "1-478-001-0890",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "40.12456",
+        "long": "20.5419"
+      },
+      "city": "miami",
+      "street": "avondale ave",
+      "number": 345,
+      "zipcode": "96378-0245"
+    },
+    "id": 9,
+    "email": "kate@gmail.com",
+    "username": "kate_h",
+    "password": "kfejk@*_",
+    "name": {
+      "firstname": "kate",
+      "lastname": "hale"
+    },
+    "phone": "1-678-456-1934",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "30.24788",
+        "long": "-20.545419"
+      },
+      "city": "fort wayne",
+      "street": "oak lawn ave",
+      "number": 526,
+      "zipcode": "10256-4532"
+    },
+    "id": 10,
+    "email": "jimmie@gmail.com",
+    "username": "jimmie_k",
+    "password": "klein*#%*",
+    "name": {
+      "firstname": "jimmie",
+      "lastname": "klein"
+    },
+    "phone": "1-104-001-4567",
+    "__v": 0
+  }
+]
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[1:6] Get all users" classname="features/fakeStoreUsers" time="0.413">
+    <system-out><![CDATA[16:21:42.793 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:42.793 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:43.201 [main] INFO  com.intuit.karate - [print] Users: [
+  {
+    "address": {
+      "geolocation": {
+        "lat": "-37.3159",
+        "long": "81.1496"
+      },
+      "city": "kilcoole",
+      "street": "new road",
+      "number": 7682,
+      "zipcode": "12926-3874"
+    },
+    "id": 1,
+    "email": "john@gmail.com",
+    "username": "johnd",
+    "password": "m38rmF$",
+    "name": {
+      "firstname": "john",
+      "lastname": "doe"
+    },
+    "phone": "1-570-236-7033",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "-37.3159",
+        "long": "81.1496"
+      },
+      "city": "kilcoole",
+      "street": "Lovers Ln",
+      "number": 7267,
+      "zipcode": "12926-3874"
+    },
+    "id": 2,
+    "email": "morrison@gmail.com",
+    "username": "mor_2314",
+    "password": "83r5^_",
+    "name": {
+      "firstname": "david",
+      "lastname": "morrison"
+    },
+    "phone": "1-570-236-7033",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "40.3467",
+        "long": "-30.1310"
+      },
+      "city": "Cullman",
+      "street": "Frances Ct",
+      "number": 86,
+      "zipcode": "29567-1452"
+    },
+    "id": 3,
+    "email": "kevin@gmail.com",
+    "username": "kevinryan",
+    "password": "kev02937@",
+    "name": {
+      "firstname": "kevin",
+      "lastname": "ryan"
+    },
+    "phone": "1-567-094-1345",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "50.3467",
+        "long": "-20.1310"
+      },
+      "city": "San Antonio",
+      "street": "Hunters Creek Dr",
+      "number": 6454,
+      "zipcode": "98234-1734"
+    },
+    "id": 4,
+    "email": "don@gmail.com",
+    "username": "donero",
+    "password": "ewedon",
+    "name": {
+      "firstname": "don",
+      "lastname": "romer"
+    },
+    "phone": "1-765-789-6734",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "40.3467",
+        "long": "-40.1310"
+      },
+      "city": "san Antonio",
+      "street": "adams St",
+      "number": 245,
+      "zipcode": "80796-1234"
+    },
+    "id": 5,
+    "email": "derek@gmail.com",
+    "username": "derek",
+    "password": "jklg*_56",
+    "name": {
+      "firstname": "derek",
+      "lastname": "powell"
+    },
+    "phone": "1-956-001-1945",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "20.1677",
+        "long": "-10.6789"
+      },
+      "city": "el paso",
+      "street": "prospect st",
+      "number": 124,
+      "zipcode": "12346-0456"
+    },
+    "id": 6,
+    "email": "david_r@gmail.com",
+    "username": "david_r",
+    "password": "3478*#54",
+    "name": {
+      "firstname": "david",
+      "lastname": "russell"
+    },
+    "phone": "1-678-345-9856",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "10.3456",
+        "long": "20.6419"
+      },
+      "city": "fresno",
+      "street": "saddle st",
+      "number": 1342,
+      "zipcode": "96378-0245"
+    },
+    "id": 7,
+    "email": "miriam@gmail.com",
+    "username": "snyder",
+    "password": "f238&@*$",
+    "name": {
+      "firstname": "miriam",
+      "lastname": "snyder"
+    },
+    "phone": "1-123-943-0563",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "50.3456",
+        "long": "10.6419"
+      },
+      "city": "mesa",
+      "street": "vally view ln",
+      "number": 1342,
+      "zipcode": "96378-0245"
+    },
+    "id": 8,
+    "email": "william@gmail.com",
+    "username": "hopkins",
+    "password": "William56$hj",
+    "name": {
+      "firstname": "william",
+      "lastname": "hopkins"
+    },
+    "phone": "1-478-001-0890",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "40.12456",
+        "long": "20.5419"
+      },
+      "city": "miami",
+      "street": "avondale ave",
+      "number": 345,
+      "zipcode": "96378-0245"
+    },
+    "id": 9,
+    "email": "kate@gmail.com",
+    "username": "kate_h",
+    "password": "kfejk@*_",
+    "name": {
+      "firstname": "kate",
+      "lastname": "hale"
+    },
+    "phone": "1-678-456-1934",
+    "__v": 0
+  },
+  {
+    "address": {
+      "geolocation": {
+        "lat": "30.24788",
+        "long": "-20.545419"
+      },
+      "city": "fort wayne",
+      "street": "oak lawn ave",
+      "number": 526,
+      "zipcode": "10256-4532"
+    },
+    "id": 10,
+    "email": "jimmie@gmail.com",
+    "username": "jimmie_k",
+    "password": "klein*#%*",
+    "name": {
+      "firstname": "jimmie",
+      "lastname": "klein"
+    },
+    "phone": "1-104-001-4567",
+    "__v": 0
+  }
+]
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[2:13] Add a new user" classname="features/fakeStoreUsers" time="0.896">
+    <system-out><![CDATA[16:21:27.784 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:27.785 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:28.651 [main] INFO  com.intuit.karate - [print] Created User: {
+  "id": 11
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[2:13] Add a new user" classname="features/fakeStoreUsers" time="0.401">
+    <system-out><![CDATA[16:21:43.207 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:43.207 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:43.604 [main] INFO  com.intuit.karate - [print] Created User: {
+  "id": 11
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[3:43] Get a user by ID" classname="features/fakeStoreUsers" time="0.416">
+    <system-out><![CDATA[16:21:28.664 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:28.664 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:29.070 [main] INFO  com.intuit.karate - [print] User with ID 1: {
+  "address": {
+    "geolocation": {
+      "lat": "-37.3159",
+      "long": "81.1496"
+    },
+    "city": "kilcoole",
+    "street": "new road",
+    "number": 7682,
+    "zipcode": "12926-3874"
+  },
+  "id": 1,
+  "email": "john@gmail.com",
+  "username": "johnd",
+  "password": "m38rmF$",
+  "name": {
+    "firstname": "john",
+    "lastname": "doe"
+  },
+  "phone": "1-570-236-7033",
+  "__v": 0
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[3:43] Get a user by ID" classname="features/fakeStoreUsers" time="0.41">
+    <system-out><![CDATA[16:21:43.610 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:43.623 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:44.016 [main] INFO  com.intuit.karate - [print] User with ID 1: {
+  "address": {
+    "geolocation": {
+      "lat": "-37.3159",
+      "long": "81.1496"
+    },
+    "city": "kilcoole",
+    "street": "new road",
+    "number": 7682,
+    "zipcode": "12926-3874"
+  },
+  "id": 1,
+  "email": "john@gmail.com",
+  "username": "johnd",
+  "password": "m38rmF$",
+  "name": {
+    "firstname": "john",
+    "lastname": "doe"
+  },
+  "phone": "1-570-236-7033",
+  "__v": 0
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[4:50] Update a user" classname="features/fakeStoreUsers" time="0.299">
+    <system-out><![CDATA[16:21:29.083 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:29.083 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+]]></system-out>
+  </testcase>
+  <testcase name="[4:50] Update a user" classname="features/fakeStoreUsers" time="0.447">
+    <system-out><![CDATA[16:21:44.023 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:44.023 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+]]></system-out>
+  </testcase>
+  <testcase name="[5:61] Delete a user" classname="features/fakeStoreUsers" time="2.008">
+    <system-out><![CDATA[16:21:29.384 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:29.385 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreUsers.feature
+scenarios:  5 | passed:  5 | failed:  0 | time: 3.7792
+---------------------------------------------------------
+
+Karate version: 1.4.1
+======================================================
+elapsed:   7.99 | threads:    1 | thread time: 3.78 
+features:     1 | skipped:    0 | efficiency: 0.47
+scenarios:    5 | passed:     5 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.4.1
+file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/target/karate-reports/karate-summary.html
+===================================================================
+
+]]></system-out>
+  </testcase>
+  <testcase name="[5:61] Delete a user" classname="features/fakeStoreUsers" time="0.823">
+    <system-out><![CDATA[16:21:44.471 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:44.471 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreUsers.feature
+scenarios:  5 | passed:  5 | failed:  0 | time: 2.0671
+---------------------------------------------------------
+
+Karate version: 1.4.1
+======================================================
+elapsed:   8.89 | threads:    1 | thread time: 6.44 
+features:     4 | skipped:    0 | efficiency: 0.72
+scenarios:   17 | passed:    17 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.4.1
+file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/target/karate-reports/karate-summary.html
+===================================================================
+
+]]></system-out>
+  </testcase>
+  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="0.384">
+    <system-out><![CDATA[16:21:31.453 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:31.454 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:31.810 [main] INFO  com.intuit.karate - [print] Response: [
   {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -308,10 +889,258 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.535">
-    <system-out><![CDATA[14:47:48.649 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:48.650 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:49.143 [main] INFO  com.intuit.karate - [print] Created Product: {
+  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="0.535">
+    <system-out><![CDATA[16:21:37.429 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:37.429 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:37.954 [main] INFO  com.intuit.karate - [print] Response: [
+  {
+    "id": 1,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  },
+  {
+    "id": 2,
+    "title": "Mens Casual Premium Slim Fit T-Shirts ",
+    "price": 22.3,
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    "rating": {
+      "rate": 4.1,
+      "count": 259
+    }
+  },
+  {
+    "id": 3,
+    "title": "Mens Cotton Jacket",
+    "price": 55.99,
+    "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 500
+    }
+  },
+  {
+    "id": 4,
+    "title": "Mens Casual Slim Fit",
+    "price": 15.99,
+    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    "rating": {
+      "rate": 2.1,
+      "count": 430
+    }
+  },
+  {
+    "id": 5,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": 6,
+    "title": "Solid Gold Petite Micropave ",
+    "price": 168,
+    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 70
+    }
+  },
+  {
+    "id": 7,
+    "title": "White Gold Plated Princess",
+    "price": 9.99,
+    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 3,
+      "count": 400
+    }
+  },
+  {
+    "id": 8,
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 1.9,
+      "count": 100
+    }
+  },
+  {
+    "id": 9,
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "price": 64,
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user\u2019s hardware configuration and operating system",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    }
+  },
+  {
+    "id": 10,
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5\u201D hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 470
+    }
+  },
+  {
+    "id": 11,
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 109,
+    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 319
+    }
+  },
+  {
+    "id": 12,
+    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "price": 114,
+    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 400
+    }
+  },
+  {
+    "id": 13,
+    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "price": 599,
+    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 250
+    }
+  },
+  {
+    "id": 14,
+    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) \u2013 Super Ultrawide Screen QLED ",
+    "price": 999.99,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.2,
+      "count": 140
+    }
+  },
+  {
+    "id": 15,
+    "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "price": 56.99,
+    "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    "rating": {
+      "rate": 2.6,
+      "count": 235
+    }
+  },
+  {
+    "id": 16,
+    "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "price": 29.95,
+    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 340
+    }
+  },
+  {
+    "id": 17,
+    "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    "price": 39.99,
+    "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
+    "rating": {
+      "rate": 3.8,
+      "count": 679
+    }
+  },
+  {
+    "id": 18,
+    "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+    "price": 9.85,
+    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 130
+    }
+  },
+  {
+    "id": 19,
+    "title": "Opna Women's Short Sleeve Moisture",
+    "price": 7.95,
+    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 146
+    }
+  },
+  {
+    "id": 20,
+    "title": "DANVOUY Womens T Shirt Casual Cotton Short",
+    "price": 12.99,
+    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  }
+]
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.746">
+    <system-out><![CDATA[16:21:31.821 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:31.821 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:32.560 [main] INFO  com.intuit.karate - [print] Created Product: {
   "id": 21,
   "title": "Test Product",
   "price": 29.99,
@@ -322,10 +1151,24 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.323">
-    <system-out><![CDATA[14:47:49.156 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:49.156 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:49.468 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
+  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.348">
+    <system-out><![CDATA[16:21:37.962 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:37.963 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:38.305 [main] INFO  com.intuit.karate - [print] Created Product: {
+  "id": 21,
+  "title": "Test Product",
+  "price": 29.99,
+  "description": "A test product",
+  "image": "https://fakestoreapi.com/img/test.png",
+  "category": "electronics"
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.314">
+    <system-out><![CDATA[16:21:32.567 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:32.568 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:32.876 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
   "id": 5,
   "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
   "price": 695,
@@ -340,54 +1183,411 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.87">
-    <system-out><![CDATA[14:47:49.481 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:49.482 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.353">
+    <system-out><![CDATA[16:21:38.312 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:38.313 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:38.661 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
+  "id": 5,
+  "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+  "price": 695,
+  "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+  "category": "jewelery",
+  "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+  "rating": {
+    "rate": 4.6,
+    "count": 400
+  }
+}
+ 
 ]]></system-out>
   </testcase>
-  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.309">
-    <system-out><![CDATA[14:47:50.349 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:50.349 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.324">
+    <system-out><![CDATA[16:21:32.885 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:32.886 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.1:70] Get product by ID" classname="features/fakeStoreAPI" time="0.822">
-    <system-out><![CDATA[14:47:50.664 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:50.665 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:51.477 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
+  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.355">
+    <system-out><![CDATA[16:21:38.668 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:38.669 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.316">
-    <system-out><![CDATA[14:47:51.488 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:51.489 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:51.795 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
+  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.295">
+    <system-out><![CDATA[16:21:33.211 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:33.211 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.26">
-    <system-out><![CDATA[14:47:51.805 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:51.805 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:52.058 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
+  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.329">
+    <system-out><![CDATA[16:21:39.032 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:39.032 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.319">
-    <system-out><![CDATA[14:47:52.066 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:52.066 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:52.378 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
+  <testcase name="[6.1:70] Get product by ID" classname="features/fakeStoreAPI" time="0.368">
+    <system-out><![CDATA[16:21:33.509 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:33.509 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:33.870 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="2.501">
-    <system-out><![CDATA[14:47:52.388 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-14:47:52.389 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-14:47:52.681 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
+  <testcase name="[6.1:70] Get product by ID" classname="features/fakeStoreAPI" time="0.362">
+    <system-out><![CDATA[16:21:39.376 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:39.376 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:39.720 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
+]]></system-out>
+  </testcase>
+  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.418">
+    <system-out><![CDATA[16:21:33.878 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:33.879 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:34.291 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
+]]></system-out>
+  </testcase>
+  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.376">
+    <system-out><![CDATA[16:21:39.728 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:39.728 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:40.099 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
+]]></system-out>
+  </testcase>
+  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.417">
+    <system-out><![CDATA[16:21:34.298 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:34.298 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:34.711 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
+]]></system-out>
+  </testcase>
+  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.341">
+    <system-out><![CDATA[16:21:40.108 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:40.108 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:40.443 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
+]]></system-out>
+  </testcase>
+  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.305">
+    <system-out><![CDATA[16:21:34.718 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:34.718 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:35.017 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
+]]></system-out>
+  </testcase>
+  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.317">
+    <system-out><![CDATA[16:21:40.449 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:40.449 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:40.761 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
+]]></system-out>
+  </testcase>
+  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="1.213">
+    <system-out><![CDATA[16:21:35.027 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:35.028 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:35.594 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreAPI.feature
-scenarios: 10 | passed: 10 | failed:  0 | time: 27.1528
+scenarios: 10 | passed: 10 | failed:  0 | time: 4.0530
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:  32.71 | threads:    1 | thread time: 27.15 
-features:     1 | skipped:    0 | efficiency: 0.83
+elapsed:   4.72 | threads:    1 | thread time: 4.05 
+features:     1 | skipped:    0 | efficiency: 0.86
 scenarios:   10 | passed:    10 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.4.1
+file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/target/karate-reports/karate-summary.html
+===================================================================
+
+]]></system-out>
+  </testcase>
+  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="1.117">
+    <system-out><![CDATA[16:21:40.768 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:40.768 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:41.115 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreAPI.feature
+scenarios: 10 | passed: 10 | failed:  0 | time: 3.5878
+---------------------------------------------------------
+
+]]></system-out>
+  </testcase>
+  <testcase name="[1:6] User login" classname="features/fakeStoreAuthentication" time="0.516">
+    <system-out><![CDATA[16:21:41.902 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:41.903 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:42.340 [main] INFO  com.intuit.karate - [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3ODc2ODUwMn0.5GO5RFgxHf7a75amNSdZv-j7KIhNHyOHjoYJvzP7mfY 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreAuthentication.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.4347
+---------------------------------------------------------
+
+]]></system-out>
+  </testcase>
+  <testcase name="[1:6] User login" classname="features/fakeStoreAuthentication" time="1.147">
+    <system-out><![CDATA[16:21:45.304 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:45.305 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:46.360 [main] INFO  com.intuit.karate - [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3ODc2ODUwNn0.l6Zg5-Aj315LYZB0DmeIbN7OQ-t2PX3mO_tKyz1MMc0 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreAuthentication.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 1.0545
+---------------------------------------------------------
+
+Karate version: 1.4.1
+======================================================
+elapsed:   1.11 | threads:    1 | thread time: 1.06 
+features:     1 | skipped:    0 | efficiency: 0.95
+scenarios:    1 | passed:     1 | failed: 0
+======================================================
+
+HTML report: (paste into browser to view) | Karate version: 1.4.1
+file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/target/karate-reports/karate-summary.html
+===================================================================
+
+]]></system-out>
+  </testcase>
+  <testcase name="[1:6] Get all products in cart" classname="features/fakeStoreCart" time="0.384">
+    <system-out><![CDATA[16:21:42.407 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:42.408 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:42.755 [main] INFO  com.intuit.karate - [print] Response: [
+  {
+    "id": 1,
+    "userId": 1,
+    "date": "2020-03-02T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 1,
+        "quantity": 4
+      },
+      {
+        "productId": 2,
+        "quantity": 1
+      },
+      {
+        "productId": 3,
+        "quantity": 6
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "date": "2020-01-02T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 2,
+        "quantity": 4
+      },
+      {
+        "productId": 1,
+        "quantity": 10
+      },
+      {
+        "productId": 5,
+        "quantity": 2
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 1,
+        "quantity": 2
+      },
+      {
+        "productId": 9,
+        "quantity": 1
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 4,
+    "userId": 3,
+    "date": "2020-01-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 1,
+        "quantity": 4
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 5,
+    "userId": 3,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 7,
+        "quantity": 1
+      },
+      {
+        "productId": 8,
+        "quantity": 1
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 6,
+    "userId": 4,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 10,
+        "quantity": 2
+      },
+      {
+        "productId": 12,
+        "quantity": 3
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 7,
+    "userId": 8,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 18,
+        "quantity": 1
+      }
+    ],
+    "__v": 0
+  }
+]
+ 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreCart.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.3469
+---------------------------------------------------------
+
+]]></system-out>
+  </testcase>
+  <testcase name="[1:6] Get all products in cart" classname="features/fakeStoreCart" time="0.721">
+    <system-out><![CDATA[16:21:46.462 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:21:46.463 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:21:47.060 [main] INFO  com.intuit.karate - [print] Response: [
+  {
+    "id": 1,
+    "userId": 1,
+    "date": "2020-03-02T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 1,
+        "quantity": 4
+      },
+      {
+        "productId": 2,
+        "quantity": 1
+      },
+      {
+        "productId": 3,
+        "quantity": 6
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "date": "2020-01-02T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 2,
+        "quantity": 4
+      },
+      {
+        "productId": 1,
+        "quantity": 10
+      },
+      {
+        "productId": 5,
+        "quantity": 2
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 3,
+    "userId": 2,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 1,
+        "quantity": 2
+      },
+      {
+        "productId": 9,
+        "quantity": 1
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 4,
+    "userId": 3,
+    "date": "2020-01-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 1,
+        "quantity": 4
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 5,
+    "userId": 3,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 7,
+        "quantity": 1
+      },
+      {
+        "productId": 8,
+        "quantity": 1
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 6,
+    "userId": 4,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 10,
+        "quantity": 2
+      },
+      {
+        "productId": 12,
+        "quantity": 3
+      }
+    ],
+    "__v": 0
+  },
+  {
+    "id": 7,
+    "userId": 8,
+    "date": "2020-03-01T00:00:00.000Z",
+    "products": [
+      {
+        "productId": 18,
+        "quantity": 1
+      }
+    ],
+    "__v": 0
+  }
+]
+ 
+---------------------------------------------------------
+feature: classpath:features/fakeStoreCart.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.5976
+---------------------------------------------------------
+
+Karate version: 1.4.1
+======================================================
+elapsed:   0.65 | threads:    1 | thread time: 0.60 
+features:     1 | skipped:    0 | efficiency: 0.92
+scenarios:    1 | passed:     1 | failed: 0
 ======================================================
 
 HTML report: (paste into browser to view) | Karate version: 1.4.1
