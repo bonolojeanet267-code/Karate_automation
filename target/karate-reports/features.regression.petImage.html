@@ -26,7 +26,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 });
 </script>
 
-    <title>features.fakeStoreCart</title>
+    <title>features.regression.petImage</title>
   </head>
   <body>
     <div id="root-container">
@@ -38,8 +38,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
     </a>
     <div class="nav-count">
-      <div id="nav-pass" class="bg-success">1</div>
-      <div id="nav-fail" class="bg-danger">0</div>
+      <div id="nav-pass" class="bg-success">0</div>
+      <div id="nav-fail" class="bg-danger">1</div>
     </div>
   </div>
   <div id="nav-env">
@@ -49,13 +49,13 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2026-05-15 04:24:33 PM</div>
+    <div>2026-05-15 09:04:47 AM</div>
   </div>
 </div>
 
         <div class="nav-container">
-          <div class="nav-item passed">
-            <a href="#[1:6]"><span>[1:6]</span> <span>Get all products in cart</span></a>
+          <div class="nav-item failed">
+            <a href="#[1:6]"><span>[1:6]</span> <span>Get pet image by ID</span></a>
           </div>
         </div>
       </div>
@@ -64,8 +64,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
           <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
           <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
           <span class="feature-label">Feature:</span>
-          <span class="feature-path">features/fakeStoreCart.feature</span><span class="feature-label">|</span>
-          <span class="feature-name">Fake Store API Tests</span>
+          <span class="feature-path">features/regression/petImage.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Swagger Pet Image API Tests</span>
           <span class="feature-description"></span>
         </div>
         <div class="scenario">
@@ -76,12 +76,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[1:6]</span>
-                <span class="scenario-name">Get all products in cart</span>
+                <span class="scenario-name">Get pet image by ID</span>
                 <span></span>
               </div>
             </div>
-            <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>1913</span>
+            <div class="scenario-time failed">
+              <span>ms:</span>&nbsp;<span>820</span>
             </div>
           </div>
           <div class="step-row">
@@ -101,10 +101,10 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
       <div class="step-ref bg-step">4</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>url &#39;https://fakestoreapi.com&#39;</span>
+        <span>*</span>&nbsp;<span>url &#39;https://petstore.swagger.io/v2&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -113,8 +113,8 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">16:24:31.279 Running tests in environment: tst 
-16:24:31.281 Base URL: https://fakestoreapi.com 
+  <div class="preformatted" data-parent="0.4">09:04:46.555 Running tests in environment: tst 
+09:04:46.555 Base URL: https://fakestoreapi.com 
 </div>   
 
   
@@ -127,67 +127,11 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.8">
-      <div class="step-ref passed">8</div>
+    <div class="step-container" id="0.7">
+      <div class="step-ref passed">7</div>
       
       <div class="step-cell passed">
-        <span>Given</span>&nbsp;<span>path &#39;/carts&#39;</span>
-      </div>
-    </div>
-    <div class="time-cell passed">5</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.9">
-      <div class="step-ref passed">9</div>
-      
-      <div class="step-cell passed">
-        <span>When</span>&nbsp;<span>method GET</span>
-      </div>
-    </div>
-    <div class="time-cell passed">1888</div>
-  </div>
-
-   
-  
-  
-
-  
-
-     
-
-  
-
-</div>
-</div>
-          <div><div>
-  
-
-  
-
-  <div class="step-row">
-    <div class="step-container" id="0.10">
-      <div class="step-ref passed">10</div>
-      
-      <div class="step-cell passed">
-        <span>Then</span>&nbsp;<span>status 200</span>
+        <span>Given</span>&nbsp;<span>path &#39;/pet/1&#39;</span>
       </div>
     </div>
     <div class="time-cell passed">0</div>
@@ -211,14 +155,14 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
   
 
   <div class="step-row">
-    <div class="step-container" id="0.11">
-      <div class="step-ref passed">11</div>
+    <div class="step-container" id="0.8">
+      <div class="step-ref passed">8</div>
       
       <div class="step-cell passed">
-        <span>And</span>&nbsp;<span>print &#39;Response:&#39;, response</span>
+        <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">18</div>
+    <div class="time-cell passed">819</div>
   </div>
 
    
@@ -227,122 +171,96 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.11">16:24:33.328 [print] Response: [
-  {
-    &quot;id&quot;: 1,
-    &quot;userId&quot;: 1,
-    &quot;date&quot;: &quot;2020-03-02T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 1,
-        &quot;quantity&quot;: 4
-      },
-      {
-        &quot;productId&quot;: 2,
-        &quot;quantity&quot;: 1
-      },
-      {
-        &quot;productId&quot;: 3,
-        &quot;quantity&quot;: 6
-      }
-    ],
-    &quot;__v&quot;: 0
-  },
-  {
-    &quot;id&quot;: 2,
-    &quot;userId&quot;: 1,
-    &quot;date&quot;: &quot;2020-01-02T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 2,
-        &quot;quantity&quot;: 4
-      },
-      {
-        &quot;productId&quot;: 1,
-        &quot;quantity&quot;: 10
-      },
-      {
-        &quot;productId&quot;: 5,
-        &quot;quantity&quot;: 2
-      }
-    ],
-    &quot;__v&quot;: 0
-  },
-  {
-    &quot;id&quot;: 3,
-    &quot;userId&quot;: 2,
-    &quot;date&quot;: &quot;2020-03-01T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 1,
-        &quot;quantity&quot;: 2
-      },
-      {
-        &quot;productId&quot;: 9,
-        &quot;quantity&quot;: 1
-      }
-    ],
-    &quot;__v&quot;: 0
-  },
-  {
-    &quot;id&quot;: 4,
-    &quot;userId&quot;: 3,
-    &quot;date&quot;: &quot;2020-01-01T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 1,
-        &quot;quantity&quot;: 4
-      }
-    ],
-    &quot;__v&quot;: 0
-  },
-  {
-    &quot;id&quot;: 5,
-    &quot;userId&quot;: 3,
-    &quot;date&quot;: &quot;2020-03-01T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 7,
-        &quot;quantity&quot;: 1
-      },
-      {
-        &quot;productId&quot;: 8,
-        &quot;quantity&quot;: 1
-      }
-    ],
-    &quot;__v&quot;: 0
-  },
-  {
-    &quot;id&quot;: 6,
-    &quot;userId&quot;: 4,
-    &quot;date&quot;: &quot;2020-03-01T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 10,
-        &quot;quantity&quot;: 2
-      },
-      {
-        &quot;productId&quot;: 12,
-        &quot;quantity&quot;: 3
-      }
-    ],
-    &quot;__v&quot;: 0
-  },
-  {
-    &quot;id&quot;: 7,
-    &quot;userId&quot;: 8,
-    &quot;date&quot;: &quot;2020-03-01T00:00:00.000Z&quot;,
-    &quot;products&quot;: [
-      {
-        &quot;productId&quot;: 18,
-        &quot;quantity&quot;: 1
-      }
-    ],
-    &quot;__v&quot;: 0
-  }
-]
- 
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref failed">9</div>
+      
+      <div class="step-cell failed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell failed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.9">09:04:47.377 classpath:features/regression/petImage.feature:9
+Then status 200
+status code was: 404, expected: 200, response time in milliseconds: 817, url: https://petstore.swagger.io/v2/pet/1, response: 
+{&quot;code&quot;:404,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;not found&quot;}
+classpath:features/regression/petImage.feature:9
 </div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref skipped">10</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>match response.message contains &#39;http&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref skipped">11</div>
+      
+      <div class="step-cell skipped">
+        <span>And</span>&nbsp;<span>print &#39;Pet Image with ID 1:&#39;, response</span>
+      </div>
+    </div>
+    <div class="time-cell skipped">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
 
   
 
