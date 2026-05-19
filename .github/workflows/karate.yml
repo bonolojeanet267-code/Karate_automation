@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-m2
 
       - name: Run Karate Tests
-  run: mvn test
-  env:
-    http.proxyHost: your-proxy-host
-    http.proxyPort: your-proxy-port
+        run: mvn test
+        env:
+          http.proxyHost: your-proxy-host
+          http.proxyPort: your-proxy-port
