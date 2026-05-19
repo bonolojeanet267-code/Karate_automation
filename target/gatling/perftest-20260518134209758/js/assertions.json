@@ -1,0 +1,27 @@
+{
+  "simulation": "performance.PerfTest",
+  "simulationId": "perftest-20260518134209758",
+  "start": 1779111731664,
+  "description": "",
+  "scenarios": ["Get Products"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "max of response time",
+  "condition": "is less than",
+  "expectedValues": [3000.0],
+  "result": true,
+  "message": "Global: max of response time is less than 3000.0",
+  "actualValue": [1218.0]
+},
+{
+  "path": "Global",
+  "target": "percentage of successful events",
+  "condition": "is greater than",
+  "expectedValues": [95.0],
+  "result": true,
+  "message": "Global: percentage of successful events is greater than 95.0",
+  "actualValue": [100.0]
+}
+  ]
+}

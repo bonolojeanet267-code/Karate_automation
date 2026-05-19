@@ -3,10 +3,14 @@ function fn() {
     
     var config = {
         baseUrl: 'https://fakestoreapi.com',
+
+        uiUrl: 'https://www.saucedemo.com/',
+
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
+
         readTimeout: 30000,
         connectTimeout: 30000
     };

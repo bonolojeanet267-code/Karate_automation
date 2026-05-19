@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="runners.TestRunner" time="24.757" tests="36" errors="0" skipped="0" failures="2">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="runners.TestRunner" time="37.896" tests="36" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Amazon Corretto\jdk17.0.16_8\bin"/>
-    <property name="sun.java.command" value="C:\Users\Bonolo\AppData\Local\Temp\surefire9001385200294033205\surefirebooter-20260515090421449_3.jar C:\Users\Bonolo\AppData\Local\Temp\surefire9001385200294033205 2026-05-15T09-04-21_264-jvmRun1 surefire-20260515090421449_1tmp surefire_0-20260515090421449_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Bonolo\AppData\Local\Temp\surefire14007604355517021409\surefirebooter-20260518161239880_3.jar C:\Users\Bonolo\AppData\Local\Temp\surefire14007604355517021409 2026-05-18T16-12-39_610-jvmRun1 surefire-20260518161239880_1tmp surefire_0-20260518161239880_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Bonolo\Main.java\Documents\KarateProjects\karate-automation\target\test-classes;C:\Users\Bonolo\Main.java\Documents\KarateProjects\karate-automation\target\classes;C:\Users\Bonolo\.m2\repository\com\intuit\karate\karate-core\1.4.1\karate-core-1.4.1.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\js\js-scriptengine\22.3.3\js-scriptengine-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\sdk\graal-sdk\22.3.3\graal-sdk-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\js\js\22.3.3\js-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\regex\regex\22.3.3\regex-22.3.3.jar;C:\Users\Bonolo\.m2\repository\org\graalvm\truffle\truffle-api\22.3.3\truffle-api-22.3.3.jar;C:\Users\Bonolo\.m2\repository\com\ibm\icu\icu4j\71.1\icu4j-71.1.jar;C:\Users\Bonolo\.m2\repository\org\thymeleaf\thymeleaf\3.1.2.RELEASE\thymeleaf-3.1.2.RELEASE.jar;C:\Users\Bonolo\.m2\repository\ognl\ognl\3.3.4\ognl-3.3.4.jar;C:\Users\Bonolo\.m2\repository\org\javassist\javassist\3.29.0-GA\javassist-3.29.0-GA.jar;C:\Users\Bonolo\.m2\repository\org\attoparser\attoparser\2.0.7.RELEASE\attoparser-2.0.7.RELEASE.jar;C:\Users\Bonolo\.m2\repository\org\unbescape\unbescape\1.1.6.RELEASE\unbescape-1.1.6.RELEASE.jar;C:\Users\Bonolo\.m2\repository\com\linecorp\armeria\armeria\1.25.2\armeria-1.25.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.2\jackson-core-2.15.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.2\jackson-annotations-2.15.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.2\jackson-datatype-jdk8-2.15.2.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.2\jackson-datatype-jsr310-2.15.2.jar;C:\Users\Bonolo\.m2\repository\io\micrometer\micrometer-core\1.11.3\micrometer-core-1.11.3.jar;C:\Users\Bonolo\.m2\repository\io\micrometer\micrometer-commons\1.11.3\micrometer-commons-1.11.3.jar;C:\Users\Bonolo\.m2\repository\io\micrometer\micrometer-observation\1.11.3\micrometer-observation-1.11.3.jar;C:\Users\Bonolo\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\Bonolo\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport\4.1.96.Final\netty-transport-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-haproxy\4.1.96.Final\netty-codec-haproxy-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-http2\4.1.96.Final\netty-codec-http2-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns\4.1.96.Final\netty-resolver-dns-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-dns\4.1.96.Final\netty-codec-dns-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\Bonolo\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-handler-proxy\4.1.96.Final\netty-handler-proxy-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-socks\4.1.96.Final\netty-codec-socks-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.96.Final\netty-transport-classes-epoll-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-epoll\4.1.96.Final\netty-transport-native-epoll-4.1.96.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.96.Final\netty-transport-classes-kqueue-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns-classes-macos\4.1.96.Final\netty-resolver-dns-classes-macos-4.1.96.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.96.Final\netty-transport-native-unix-common-4.1.96.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.96.Final\netty-transport-native-kqueue-4.1.96.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver-dns-native-macos\4.1.96.Final\netty-resolver-dns-native-macos-4.1.96.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-osx-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final-windows-x86_64.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\brotli4j\1.12.0\brotli4j-1.12.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\service\1.12.0\service-1.12.0.jar;C:\Users\Bonolo\.m2\repository\org\apache\httpcomponents\httpclient\4.5.14\httpclient-4.5.14.jar;C:\Users\Bonolo\.m2\repository\org\apache\httpcomponents\httpcore\4.4.16\httpcore-4.4.16.jar;C:\Users\Bonolo\.m2\repository\commons-codec\commons-codec\1.16.0\commons-codec-1.16.0.jar;C:\Users\Bonolo\.m2\repository\org\slf4j\jcl-over-slf4j\2.0.9\jcl-over-slf4j-2.0.9.jar;C:\Users\Bonolo\.m2\repository\org\antlr\antlr4-runtime\4.11.1\antlr4-runtime-4.11.1.jar;C:\Users\Bonolo\.m2\repository\com\jayway\jsonpath\json-path\2.8.0\json-path-2.8.0.jar;C:\Users\Bonolo\.m2\repository\net\minidev\json-smart\2.4.10\json-smart-2.4.10.jar;C:\Users\Bonolo\.m2\repository\net\minidev\accessors-smart\2.4.9\accessors-smart-2.4.9.jar;C:\Users\Bonolo\.m2\repository\org\ow2\asm\asm\9.3\asm-9.3.jar;C:\Users\Bonolo\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar;C:\Users\Bonolo\.m2\repository\de\siegmar\fastcsv\2.2.1\fastcsv-2.2.1.jar;C:\Users\Bonolo\.m2\repository\info\picocli\picocli\4.7.1\picocli-4.7.1.jar;C:\Users\Bonolo\.m2\repository\io\github\classgraph\classgraph\4.8.160\classgraph-4.8.160.jar;C:\Users\Bonolo\.m2\repository\io\github\t12y\resemble\1.0.2\resemble-1.0.2.jar;C:\Users\Bonolo\.m2\repository\io\github\t12y\ssim\1.0.0\ssim-1.0.0.jar;C:\Users\Bonolo\.m2\repository\com\intuit\karate\karate-junit5\1.4.1\karate-junit5-1.4.1.jar;C:\Users\Bonolo\.m2\repository\com\intuit\karate\karate-gatling\1.4.1\karate-gatling-1.4.1.jar;C:\Users\Bonolo\.m2\repository\io\gatling\highcharts\gatling-charts-highcharts\3.9.5\gatling-charts-highcharts-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-app\3.9.5\gatling-app-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-core-java\3.9.5\gatling-core-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\net\jodah\typetools\0.6.3\typetools-0.6.3.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-http-java\3.9.5\gatling-http-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jms\3.9.5\gatling-jms-3.9.5.jar;C:\Users\Bonolo\.m2\repository\javax\jms\javax.jms-api\2.0.1\javax.jms-api-2.0.1.jar;C:\Users\Bonolo\.m2\repository\com\eatthepath\fast-uuid\0.2.0\fast-uuid-0.2.0.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jms-java\3.9.5\gatling-jms-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-mqtt\3.9.5\gatling-mqtt-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-mqtt\4.1.92.Final\netty-codec-mqtt-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-mqtt-java\3.9.5\gatling-mqtt-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jdbc\3.9.5\gatling-jdbc-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jdbc-java\3.9.5\gatling-jdbc-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-redis\3.9.5\gatling-redis-3.9.5.jar;C:\Users\Bonolo\.m2\repository\net\debasishg\redisclient_2.13\3.42\redisclient_2.13-3.42.jar;C:\Users\Bonolo\.m2\repository\org\apache\commons\commons-pool2\2.8.0\commons-pool2-2.8.0.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-redis-java\3.9.5\gatling-redis-java-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-graphite\3.9.5\gatling-graphite-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-charts\3.9.5\gatling-charts-3.9.5.jar;C:\Users\Bonolo\.m2\repository\com\tdunning\t-digest\3.1\t-digest-3.1.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-recorder\3.9.5\gatling-recorder-3.9.5.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\modules\scala-swing_2.13\3.0.0\scala-swing_2.13-3.0.0.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-recorder-bc-shaded\1.73\gatling-recorder-bc-shaded-1.73.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-core\3.9.5\gatling-core-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-netty-util\3.9.5\gatling-netty-util-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jdk-util\3.9.5\gatling-jdk-util-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-buffer\4.1.92.Final\netty-buffer-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\incubator\netty-incubator-transport-native-io_uring\0.0.21.Final\netty-incubator-transport-native-io_uring-0.0.21.Final-linux-x86_64.jar;C:\Users\Bonolo\.m2\repository\io\netty\incubator\netty-incubator-transport-classes-io_uring\0.0.21.Final\netty-incubator-transport-classes-io_uring-0.0.21.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\incubator\netty-incubator-transport-native-io_uring\0.0.21.Final\netty-incubator-transport-native-io_uring-0.0.21.Final-linux-aarch_64.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-commons\3.9.5\gatling-commons-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-commons-shared\3.9.5\gatling-commons-shared-3.9.5.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\scala-reflect\2.13.10\scala-reflect-2.13.10.jar;C:\Users\Bonolo\.m2\repository\io\suzaku\boopickle_2.13\1.3.3\boopickle_2.13-1.3.3.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-commons-shared-unstable\3.9.5\gatling-commons-shared-unstable-3.9.5.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\config\1.4.2\config-1.4.2.jar;C:\Users\Bonolo\.m2\repository\org\typelevel\spire-macros_2.13\0.17.0\spire-macros_2.13-0.17.0.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\scala-logging\scala-logging_2.13\3.9.5\scala-logging_2.13-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-jsonpath\3.9.5\gatling-jsonpath-3.9.5.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\akka\akka-actor_2.13\2.6.20\akka-actor_2.13-2.6.20.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\modules\scala-java8-compat_2.13\1.0.0\scala-java8-compat_2.13-1.0.0.jar;C:\Users\Bonolo\.m2\repository\com\typesafe\akka\akka-slf4j_2.13\2.6.20\akka-slf4j_2.13-2.6.20.jar;C:\Users\Bonolo\.m2\repository\org\simpleflatmapper\lightning-csv\8.2.3\lightning-csv-8.2.3.jar;C:\Users\Bonolo\.m2\repository\org\simpleflatmapper\sfm-util\8.2.3\sfm-util-8.2.3.jar;C:\Users\Bonolo\.m2\repository\com\github\ben-manes\caffeine\caffeine\2.9.3\caffeine-2.9.3.jar;C:\Users\Bonolo\.m2\repository\org\checkerframework\checker-qual\3.19.0\checker-qual-3.19.0.jar;C:\Users\Bonolo\.m2\repository\com\google\errorprone\error_prone_annotations\2.10.0\error_prone_annotations-2.10.0.jar;C:\Users\Bonolo\.m2\repository\io\pebbletemplates\pebble\3.2.1\pebble-3.2.1.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\modules\scala-parser-combinators_2.13\2.3.0\scala-parser-combinators_2.13-2.3.0.jar;C:\Users\Bonolo\.m2\repository\com\github\scopt\scopt_2.13\3.7.1\scopt_2.13-3.7.1.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-handler\4.1.92.Final\netty-handler-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-common\4.1.92.Final\netty-common-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-resolver\4.1.92.Final\netty-resolver-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.92.Final\netty-transport-native-unix-common-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec\4.1.92.Final\netty-codec-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-classes\2.0.61.Final\netty-tcnative-classes-2.0.61.Final.jar;C:\Users\Bonolo\.m2\repository\com\softwaremill\quicklens\quicklens_2.13\1.9.3\quicklens_2.13-1.9.3.jar;C:\Users\Bonolo\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.0\jackson-databind-2.15.0.jar;C:\Users\Bonolo\.m2\repository\net\sf\saxon\Saxon-HE\10.6\Saxon-HE-10.6.jar;C:\Users\Bonolo\.m2\repository\org\jodd\jodd-lagarto\6.0.6\jodd-lagarto-6.0.6.jar;C:\Users\Bonolo\.m2\repository\org\jodd\jodd-util\6.1.0\jodd-util-6.1.0.jar;C:\Users\Bonolo\.m2\repository\io\burt\jmespath-jackson\0.5.1\jmespath-jackson-0.5.1.jar;C:\Users\Bonolo\.m2\repository\io\burt\jmespath-core\0.5.1\jmespath-core-0.5.1.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-http\3.9.5\gatling-http-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\gatling\gatling-http-client\3.9.5\gatling-http-client-3.9.5.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-codec-http\4.1.92.Final\netty-codec-http-4.1.92.Final.jar;C:\Users\Bonolo\.m2\repository\io\netty\netty-tcnative-boringssl-static\2.0.61.Final\netty-tcnative-boringssl-static-2.0.61.Final.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-linux-x86_64\1.11.0\native-linux-x86_64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-linux-aarch64\1.11.0\native-linux-aarch64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-osx-x86_64\1.11.0\native-osx-x86_64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-osx-aarch64\1.11.0\native-osx-aarch64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\com\aayushatharva\brotli4j\native-windows-x86_64\1.11.0\native-windows-x86_64-1.11.0.jar;C:\Users\Bonolo\.m2\repository\org\scala-lang\scala-library\2.13.10\scala-library-2.13.10.jar;C:\Users\Bonolo\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\Bonolo\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Bonolo\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\Bonolo\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Bonolo\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\Bonolo\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\Bonolo\.m2\repository\ch\qos\logback\logback-classic\1.4.11\logback-classic-1.4.11.jar;C:\Users\Bonolo\.m2\repository\ch\qos\logback\logback-core\1.4.11\logback-core-1.4.11.jar;C:\Users\Bonolo\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Bonolo\AppData\Local\Temp\surefire9001385200294033205\surefirebooter-20260515090421449_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Bonolo\AppData\Local\Temp\surefire14007604355517021409\surefirebooter-20260518161239880_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.16+8-LTS"/>
@@ -59,10 +59,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="[1:6] Get all users" classname="features/fakeStoreUsers" time="3.448">
-    <system-out><![CDATA[09:04:26.120 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:26.126 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:27.861 [main] INFO  com.intuit.karate - [print] Users: [
+  <testcase name="[1:6] Get all users" classname="features/fakeStoreUsers" time="4.114">
+    <system-out><![CDATA[16:12:46.056 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:46.064 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:47.986 [main] INFO  com.intuit.karate - [print] Users: [
   {
     "address": {
       "geolocation": {
@@ -287,10 +287,10 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] Get all users" classname="features/fakeStoreUsers" time="0.414">
-    <system-out><![CDATA[09:04:41.761 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:41.761 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:42.175 [main] INFO  com.intuit.karate - [print] Users: [
+  <testcase name="[1:6] Get all users" classname="features/fakeStoreUsers" time="0.404">
+    <system-out><![CDATA[16:13:02.574 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:02.574 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:02.973 [main] INFO  com.intuit.karate - [print] Users: [
   {
     "address": {
       "geolocation": {
@@ -515,28 +515,28 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[2:13] Add a new user" classname="features/fakeStoreUsers" time="1.144">
-    <system-out><![CDATA[09:04:27.907 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:27.907 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:29.021 [main] INFO  com.intuit.karate - [print] Created User: {
+  <testcase name="[2:13] Add a new user" classname="features/fakeStoreUsers" time="1.077">
+    <system-out><![CDATA[16:12:48.039 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:48.040 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:49.078 [main] INFO  com.intuit.karate - [print] Created User: {
+  "id": 11
+}
+ 
+]]></system-out>
+  </testcase>
+  <testcase name="[2:13] Add a new user" classname="features/fakeStoreUsers" time="0.36">
+    <system-out><![CDATA[16:13:02.981 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:02.982 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:03.334 [main] INFO  com.intuit.karate - [print] Created User: {
   "id": 1
 }
  
 ]]></system-out>
   </testcase>
-  <testcase name="[2:13] Add a new user" classname="features/fakeStoreUsers" time="0.397">
-    <system-out><![CDATA[09:04:42.189 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:42.189 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:42.586 [main] INFO  com.intuit.karate - [print] Created User: {
-  "id": 1
-}
- 
-]]></system-out>
-  </testcase>
-  <testcase name="[3:43] Get a user by ID" classname="features/fakeStoreUsers" time="0.403">
-    <system-out><![CDATA[09:04:29.024 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:29.032 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:29.427 [main] INFO  com.intuit.karate - [print] User with ID 1: {
+  <testcase name="[3:43] Get a user by ID" classname="features/fakeStoreUsers" time="0.404">
+    <system-out><![CDATA[16:12:49.090 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:49.090 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:49.485 [main] INFO  com.intuit.karate - [print] User with ID 1: {
   "address": {
     "geolocation": {
       "lat": "-37.3159",
@@ -561,10 +561,10 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[3:43] Get a user by ID" classname="features/fakeStoreUsers" time="0.353">
-    <system-out><![CDATA[09:04:42.590 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:42.590 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:42.943 [main] INFO  com.intuit.karate - [print] User with ID 1: {
+  <testcase name="[3:43] Get a user by ID" classname="features/fakeStoreUsers" time="0.345">
+    <system-out><![CDATA[16:13:03.341 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:03.342 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:03.682 [main] INFO  com.intuit.karate - [print] User with ID 1: {
   "address": {
     "geolocation": {
       "lat": "-37.3159",
@@ -589,27 +589,27 @@
  
 ]]></system-out>
   </testcase>
-  <testcase name="[4:50] Update a user" classname="features/fakeStoreUsers" time="0.278">
-    <system-out><![CDATA[09:04:29.433 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:29.433 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[4:50] Update a user" classname="features/fakeStoreUsers" time="0.878">
+    <system-out><![CDATA[16:12:49.498 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:49.498 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[4:50] Update a user" classname="features/fakeStoreUsers" time="0.316">
-    <system-out><![CDATA[09:04:42.959 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:42.959 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[4:50] Update a user" classname="features/fakeStoreUsers" time="0.291">
+    <system-out><![CDATA[16:13:03.688 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:03.688 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[5:61] Delete a user" classname="features/fakeStoreUsers" time="2.154">
-    <system-out><![CDATA[09:04:29.734 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:29.734 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[5:61] Delete a user" classname="features/fakeStoreUsers" time="2.764">
+    <system-out><![CDATA[16:12:50.377 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:50.378 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreUsers.feature
-scenarios:  5 | passed:  5 | failed:  0 | time: 3.8684
+scenarios:  5 | passed:  5 | failed:  0 | time: 4.5550
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:   8.15 | threads:    1 | thread time: 3.87 
+elapsed:   9.77 | threads:    1 | thread time: 4.56 
 features:     1 | skipped:    0 | efficiency: 0.47
 scenarios:    5 | passed:     5 | failed: 0
 ======================================================
@@ -620,20 +620,20 @@ file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tar
 
 ]]></system-out>
   </testcase>
-  <testcase name="[5:61] Delete a user" classname="features/fakeStoreUsers" time="0.446">
-    <system-out><![CDATA[09:04:43.264 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:43.265 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[5:61] Delete a user" classname="features/fakeStoreUsers" time="0.596">
+    <system-out><![CDATA[16:13:03.983 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:03.983 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreUsers.feature
-scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
+scenarios:  5 | passed:  5 | failed:  0 | time: 1.7593
 ---------------------------------------------------------
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="0.338">
-    <system-out><![CDATA[09:04:31.933 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:31.934 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:32.247 [main] INFO  com.intuit.karate - [print] Response: [
+  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="0.395">
+    <system-out><![CDATA[16:12:53.223 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:53.224 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:53.538 [main] INFO  com.intuit.karate - [print] Response: [
   {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -878,10 +878,10 @@ scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
  
 ]]></system-out>
   </testcase>
-  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="0.309">
-    <system-out><![CDATA[09:04:37.323 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:37.323 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:37.632 [main] INFO  com.intuit.karate - [print] Response: [
+  <testcase name="[1:7] Get all products" classname="features/fakeStoreAPI" time="0.313">
+    <system-out><![CDATA[16:12:58.454 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:58.455 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:58.743 [main] INFO  com.intuit.karate - [print] Response: [
   {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -1126,10 +1126,10 @@ scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
  
 ]]></system-out>
   </testcase>
-  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.287">
-    <system-out><![CDATA[09:04:32.259 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:32.259 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:32.540 [main] INFO  com.intuit.karate - [print] Created Product: {
+  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.367">
+    <system-out><![CDATA[16:12:53.583 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:53.583 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:53.936 [main] INFO  com.intuit.karate - [print] Created Product: {
   "id": 21,
   "title": "Test Product",
   "price": 29.99,
@@ -1140,10 +1140,10 @@ scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
  
 ]]></system-out>
   </testcase>
-  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.33">
-    <system-out><![CDATA[09:04:37.632 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:37.632 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:37.962 [main] INFO  com.intuit.karate - [print] Created Product: {
+  <testcase name="[2:14] Create a new product" classname="features/fakeStoreAPI" time="0.286">
+    <system-out><![CDATA[16:12:58.755 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:58.755 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:59.037 [main] INFO  com.intuit.karate - [print] Created Product: {
   "id": 21,
   "title": "Test Product",
   "price": 29.99,
@@ -1154,10 +1154,10 @@ scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
  
 ]]></system-out>
   </testcase>
-  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.843">
-    <system-out><![CDATA[09:04:32.540 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:32.540 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:33.383 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
+  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.297">
+    <system-out><![CDATA[16:12:53.947 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:53.948 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:54.235 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
   "id": 5,
   "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
   "price": 695,
@@ -1172,10 +1172,10 @@ scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
  
 ]]></system-out>
   </testcase>
-  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.266">
-    <system-out><![CDATA[09:04:37.962 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:37.977 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:38.228 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
+  <testcase name="[3:31] Get a product by ID" classname="features/fakeStoreAPI" time="0.293">
+    <system-out><![CDATA[16:12:59.043 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:59.043 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:59.331 [main] INFO  com.intuit.karate - [print] Product with ID 5: {
   "id": 5,
   "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
   "price": 695,
@@ -1190,87 +1190,87 @@ scenarios:  5 | passed:  5 | failed:  0 | time: 1.8210
  
 ]]></system-out>
   </testcase>
-  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.293">
-    <system-out><![CDATA[09:04:33.399 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:33.399 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.247">
+    <system-out><![CDATA[16:12:54.242 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:54.243 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.249">
-    <system-out><![CDATA[09:04:38.228 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:38.228 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[4:39] Update a product" classname="features/fakeStoreAPI" time="0.278">
+    <system-out><![CDATA[16:12:59.338 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:59.338 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.301">
-    <system-out><![CDATA[09:04:33.683 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:33.684 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.262">
+    <system-out><![CDATA[16:12:54.491 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:54.492 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
-  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.297">
-    <system-out><![CDATA[09:04:38.486 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:38.486 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+  <testcase name="[5:54] Delete a product" classname="features/fakeStoreAPI" time="0.252">
+    <system-out><![CDATA[16:12:59.619 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:59.620 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ]]></system-out>
   </testcase>
   <testcase name="[6.1:70] Get product by ID" classname="features/fakeStoreAPI" time="0.294">
-    <system-out><![CDATA[09:04:33.979 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:33.979 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:34.273 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
+    <system-out><![CDATA[16:12:54.758 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:54.759 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:55.044 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.1:70] Get product by ID" classname="features/fakeStoreAPI" time="0.26">
-    <system-out><![CDATA[09:04:38.779 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:38.779 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:39.039 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
+  <testcase name="[6.1:70] Get product by ID" classname="features/fakeStoreAPI" time="0.246">
+    <system-out><![CDATA[16:12:59.872 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:59.872 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:00.114 [main] INFO  com.intuit.karate - [print] Product: Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.297">
-    <system-out><![CDATA[09:04:34.273 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:34.273 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:34.570 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
+  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.286">
+    <system-out><![CDATA[16:12:55.052 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:55.052 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:55.332 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
 ]]></system-out>
   </testcase>
-  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.254">
-    <system-out><![CDATA[09:04:39.055 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:39.055 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:39.309 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
+  <testcase name="[6.2:71] Get product by ID" classname="features/fakeStoreAPI" time="0.242">
+    <system-out><![CDATA[16:13:00.120 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:00.121 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:00.359 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Premium Slim Fit T-Shirts  
 ]]></system-out>
   </testcase>
-  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.342">
-    <system-out><![CDATA[09:04:34.570 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:34.570 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:34.912 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
+  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.284">
+    <system-out><![CDATA[16:12:55.339 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:55.339 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:55.618 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.283">
-    <system-out><![CDATA[09:04:39.329 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:39.330 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:39.609 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
+  <testcase name="[6.3:72] Get product by ID" classname="features/fakeStoreAPI" time="0.293">
+    <system-out><![CDATA[16:13:00.365 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:00.365 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:00.653 [main] INFO  com.intuit.karate - [print] Product: Mens Cotton Jacket 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.372">
-    <system-out><![CDATA[09:04:34.931 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:34.932 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:35.283 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
+  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.252">
+    <system-out><![CDATA[16:12:55.626 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:55.627 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:55.873 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.306">
-    <system-out><![CDATA[09:04:39.625 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:39.630 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:39.931 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
+  <testcase name="[6.4:73] Get product by ID" classname="features/fakeStoreAPI" time="0.284">
+    <system-out><![CDATA[16:13:00.659 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:00.659 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:00.939 [main] INFO  com.intuit.karate - [print] Product: Mens Casual Slim Fit 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="1.019">
-    <system-out><![CDATA[09:04:35.295 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:35.296 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:35.594 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
+  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="1.147">
+    <system-out><![CDATA[16:12:55.882 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:12:55.883 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:12:56.186 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreAPI.feature
-scenarios: 10 | passed: 10 | failed:  0 | time: 3.5603
+scenarios: 10 | passed: 10 | failed:  0 | time: 2.8481
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:   4.25 | threads:    1 | thread time: 3.56 
-features:     1 | skipped:    0 | efficiency: 0.84
+elapsed:   3.73 | threads:    1 | thread time: 2.85 
+features:     1 | skipped:    0 | efficiency: 0.76
 scenarios:   10 | passed:    10 | failed: 0
 ======================================================
 
@@ -1280,41 +1280,41 @@ file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tar
 
 ]]></system-out>
   </testcase>
-  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="0.862">
-    <system-out><![CDATA[09:04:39.946 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:39.946 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:40.193 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
+  <testcase name="[6.5:74] Get product by ID" classname="features/fakeStoreAPI" time="0.721">
+    <system-out><![CDATA[16:13:00.955 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:00.960 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:01.221 [main] INFO  com.intuit.karate - [print] Product: John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreAPI.feature
-scenarios: 10 | passed: 10 | failed:  0 | time: 2.7796
+scenarios: 10 | passed: 10 | failed:  0 | time: 2.6700
 ---------------------------------------------------------
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] User login" classname="features/fakeStoreAuthentication" time="0.446">
-    <system-out><![CDATA[09:04:40.818 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:40.818 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:41.211 [main] INFO  com.intuit.karate - [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3ODgyODY4Mn0.fFxGkRbpZB1-ZGa-fXI5Rp7CKVZ8Dch_eaUIJ7fcX94 
+  <testcase name="[1:6] User login" classname="features/fakeStoreAuthentication" time="0.491">
+    <system-out><![CDATA[16:13:01.685 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:01.686 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:02.109 [main] INFO  com.intuit.karate - [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3OTExMzU4Mn0.LDEHdwDXmnO8pLDj21d8bMsrwcWHDo3vmpqu6R4aM1c 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreAuthentication.feature
-scenarios:  1 | passed:  1 | failed:  0 | time: 0.3922
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.4218
 ---------------------------------------------------------
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] User login" classname="features/fakeStoreAuthentication" time="0.738">
-    <system-out><![CDATA[09:04:45.189 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:45.189 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:45.621 [main] INFO  com.intuit.karate - [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3ODgyODY4N30.J1eK6QOmhca8slEZeiJwrkImWMqbAvW7D3WhyGVTNcg 
+  <testcase name="[1:6] User login" classname="features/fakeStoreAuthentication" time="0.546">
+    <system-out><![CDATA[16:13:11.747 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:11.749 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:12.143 [main] INFO  com.intuit.karate - [print] Login Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIsInVzZXIiOiJtb3JfMjMxNCIsImlhdCI6MTc3OTExMzU5Mn0.NrFq2Ft25N1NrMXXoK2-5FJ-UPlr7s2PqYYvQrZar5E 
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreAuthentication.feature
-scenarios:  1 | passed:  1 | failed:  0 | time: 0.4357
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.3930
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:   0.52 | threads:    1 | thread time: 0.44 
-features:     1 | skipped:    0 | efficiency: 0.84
+elapsed:   0.46 | threads:    1 | thread time: 0.39 
+features:     1 | skipped:    0 | efficiency: 0.86
 scenarios:    1 | passed:     1 | failed: 0
 ======================================================
 
@@ -1324,10 +1324,10 @@ file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tar
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] Get all products in cart" classname="features/fakeStoreCart" time="0.488">
-    <system-out><![CDATA[09:04:41.287 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:41.289 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:41.689 [main] INFO  com.intuit.karate - [print] Response: [
+  <testcase name="[1:6] Get all products in cart" classname="features/fakeStoreCart" time="0.401">
+    <system-out><![CDATA[16:13:02.174 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:02.174 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:02.527 [main] INFO  com.intuit.karate - [print] Response: [
   {
     "id": 1,
     "userId": 1,
@@ -1444,15 +1444,15 @@ file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tar
  
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreCart.feature
-scenarios:  1 | passed:  1 | failed:  0 | time: 0.4006
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.3515
 ---------------------------------------------------------
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] Get all products in cart" classname="features/fakeStoreCart" time="0.588">
-    <system-out><![CDATA[09:04:45.934 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:45.935 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:46.338 [main] INFO  com.intuit.karate - [print] Response: [
+  <testcase name="[1:6] Get all products in cart" classname="features/fakeStoreCart" time="0.68">
+    <system-out><![CDATA[16:13:12.343 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:12.343 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:12.734 [main] INFO  com.intuit.karate - [print] Response: [
   {
     "id": 1,
     "userId": 1,
@@ -1569,13 +1569,13 @@ scenarios:  1 | passed:  1 | failed:  0 | time: 0.4006
  
 ---------------------------------------------------------
 feature: classpath:features/fakeStoreCart.feature
-scenarios:  1 | passed:  1 | failed:  0 | time: 0.4062
+scenarios:  1 | passed:  1 | failed:  0 | time: 0.3885
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:   0.48 | threads:    1 | thread time: 0.41 
-features:     1 | skipped:    0 | efficiency: 0.84
+elapsed:   0.57 | threads:    1 | thread time: 0.39 
+features:     1 | skipped:    0 | efficiency: 0.69
 scenarios:    1 | passed:     1 | failed: 0
 ======================================================
 
@@ -1585,51 +1585,20 @@ file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tar
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] Get pet image by ID" classname="features/regression/petImage" time="1.457">
-    <failure message="status code was: 404, expected: 200, response time in milliseconds: 1146, url: https://petstore.swagger.io/v2/pet/1, response: &#10;{&quot;code&quot;:404,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;not found&quot;}&#10;classpath:features/regression/petImage.feature:9" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-status code was: 404, expected: 200, response time in milliseconds: 1146, url: https://petstore.swagger.io/v2/pet/1, response: 
-{"code":404,"type":"unknown","message":"not found"}
-classpath:features/regression/petImage.feature:9
-	at com.intuit.karate.junit5.FeatureNode.lambda$next$1(FeatureNode.java:86)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEachOrdered(ReferencePipeline.java:601)
-	at java.base/java.util.Optional.ifPresent(Optional.java:178)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></failure>
-    <system-out><![CDATA[09:04:43.728 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:43.730 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:44.894 [main] ERROR com.intuit.karate - classpath:features/regression/petImage.feature:9
-Then status 200
-status code was: 404, expected: 200, response time in milliseconds: 1146, url: https://petstore.swagger.io/v2/pet/1, response: 
-{"code":404,"type":"unknown","message":"not found"}
-classpath:features/regression/petImage.feature:9
+  <testcase name="[1:3] Successful login with valid credentials" classname="features/ui/login" time="7.146">
+    <system-out><![CDATA[16:13:04.586 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:04.587 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
 ---------------------------------------------------------
-feature: classpath:features/regression/petImage.feature
-scenarios:  1 | passed:  0 | failed:  1 | time: 1.1614
+feature: classpath:features/ui/login.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 6.3762
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:   8.60 | threads:    1 | thread time: 6.56 
-features:     5 | skipped:    0 | efficiency: 0.76
-scenarios:   18 | passed:    17 | failed: 1
+elapsed:  14.42 | threads:    1 | thread time: 11.58 
+features:     5 | skipped:    0 | efficiency: 0.80
+scenarios:   18 | passed:    18 | failed: 0
 ======================================================
->>> failed features:
-status code was: 404, expected: 200, response time in milliseconds: 1146, url: https://petstore.swagger.io/v2/pet/1, response: 
-{"code":404,"type":"unknown","message":"not found"}
-classpath:features/regression/petImage.feature:9
-<<<
 
 HTML report: (paste into browser to view) | Karate version: 1.4.1
 file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/target/karate-reports/karate-summary.html
@@ -1637,51 +1606,26 @@ file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tar
 
 ]]></system-out>
   </testcase>
-  <testcase name="[1:6] Get pet image by ID" classname="features/regression/petImage" time="0.978">
-    <failure message="status code was: 404, expected: 200, response time in milliseconds: 817, url: https://petstore.swagger.io/v2/pet/1, response: &#10;{&quot;code&quot;:404,&quot;type&quot;:&quot;unknown&quot;,&quot;message&quot;:&quot;not found&quot;}&#10;classpath:features/regression/petImage.feature:9" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: 
-status code was: 404, expected: 200, response time in milliseconds: 817, url: https://petstore.swagger.io/v2/pet/1, response: 
-{"code":404,"type":"unknown","message":"not found"}
-classpath:features/regression/petImage.feature:9
-	at com.intuit.karate.junit5.FeatureNode.lambda$next$1(FeatureNode.java:86)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
-	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEachOrdered(ReferencePipeline.java:601)
-	at java.base/java.util.Optional.ifPresent(Optional.java:178)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-]]></failure>
-    <system-out><![CDATA[09:04:46.555 [main] INFO  com.intuit.karate - Running tests in environment: tst 
-09:04:46.555 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
-09:04:47.376 [main] ERROR com.intuit.karate - classpath:features/regression/petImage.feature:9
-Then status 200
-status code was: 404, expected: 200, response time in milliseconds: 817, url: https://petstore.swagger.io/v2/pet/1, response: 
-{"code":404,"type":"unknown","message":"not found"}
-classpath:features/regression/petImage.feature:9
+  <testcase name="[1:3] Successful login with valid credentials" classname="features/ui/login" time="6.778">
+    <system-out><![CDATA[16:13:13.055 [main] INFO  com.intuit.karate - Running tests in environment: tst 
+16:13:13.056 [main] INFO  com.intuit.karate - Base URL: https://fakestoreapi.com 
+16:13:13.065 [main] WARN  c.intuit.karate.driver.DriverOptions - preferred port 9222 not available, will use: 54947
+16:13:15.807 [nioEventLoopGroup-3-1] WARN  c.i.k.driver.chrome_1779113593064 - devtools error: [id: 8, sessionId: 0C8B3232E8E7B28155A41F351EDD689A, result: [type: MAP, value: {type=object, subtype=error, className=TypeError, description=TypeError: Cannot read properties of null (reading 'focus')
+    at <anonymous>:1:49, objectId=8238205211060200218.1.1}]]
+16:13:15.814 [main] WARN  c.i.k.driver.chrome_1779113593064 - js eval failed once:var e = document.querySelector("#user-name"); e.focus(); try { e.selectionStart = e.selectionEnd = e.value.length } catch(x) {}, error: [type: MAP, value: {type=object, subtype=error, className=TypeError, description=TypeError: Cannot read properties of null (reading 'focus')
+    at <anonymous>:1:49, objectId=8238205211060200218.1.1}]
+16:13:17.902 [chrome_1779113584619] WARN  com.intuit.karate.shell.Command - exit code was non-zero: 1 - [C:\Program Files\Google\Chrome\Application\chrome.exe, --remote-debugging-port=9222, --remote-allow-origins=*, --no-first-run, --user-data-dir=C:\Users\Bonolo\Main.java\Documents\KarateProjects\karate-automation\target\chrome_1779113584619, --disable-popup-blocking] working dir: target\chrome_1779113584619
 ---------------------------------------------------------
-feature: classpath:features/regression/petImage.feature
-scenarios:  1 | passed:  0 | failed:  1 | time: 0.8201
+feature: classpath:features/ui/login.feature
+scenarios:  1 | passed:  1 | failed:  0 | time: 6.1729
 ---------------------------------------------------------
 
 Karate version: 1.4.1
 ======================================================
-elapsed:   0.88 | threads:    1 | thread time: 0.82 
-features:     1 | skipped:    0 | efficiency: 0.93
-scenarios:    1 | passed:     0 | failed: 1
+elapsed:   6.58 | threads:    1 | thread time: 6.17 
+features:     1 | skipped:    0 | efficiency: 0.94
+scenarios:    1 | passed:     1 | failed: 0
 ======================================================
->>> failed features:
-status code was: 404, expected: 200, response time in milliseconds: 817, url: https://petstore.swagger.io/v2/pet/1, response: 
-{"code":404,"type":"unknown","message":"not found"}
-classpath:features/regression/petImage.feature:9
-<<<
 
 HTML report: (paste into browser to view) | Karate version: 1.4.1
 file:///C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/target/karate-reports/karate-summary.html

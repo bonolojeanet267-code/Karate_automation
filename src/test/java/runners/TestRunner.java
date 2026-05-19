@@ -7,6 +7,11 @@ import com.intuit.karate.junit5.Karate;
 class TestRunner {
     
     @Karate.Test
+    Karate testSwagLabs() {
+        return Karate.run("classpath:features/ui/login.feature");
+    }
+    
+    @Karate.Test
     Karate testFakeStoreAPI() {
         return Karate.run("classpath:features/fakeStoreAPI.feature");
     }
