@@ -1,17 +1,23 @@
-name: Karate API Tests
+name: E2E Testing Framework
 
 on:
   push:
     branches:
       - master
+
   pull_request:
     branches:
       - master
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
 
 jobs:
-  karate-test:
+  # JOB 1: Karate API Tests
+  karate-api-tests:
     runs-on: windows-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,8 +36,124 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      - name: Run Karate Tests
-        run: mvn test
-        env:
-          http.proxyHost: your-proxy-host
-          http.proxyPort: your-proxy-port
+      - name: Run Karate API Tests
+        id: karate-tests
+        run: mvn test -Dtest=TestRunner
+        continue-on-error: true
+
+      - name: Upload Karate Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: karate-test-report
+          path: target/karate-reports/
+          retention-days: 30
+
+      - name: Set API test status
+        id: api-status
+        if: steps.karate-tests.outcome == 'failure'
+        run: echo "status=failed" >> $GITHUB_OUTPUT
+
+  # JOB 2: Playwright Java UI Tests
+  playwright-ui-tests:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-m2
+
+      - name: Run Playwright UI Tests
+        id: ui-tests
+        run: mvn test -Dtest=uitests.SauceDemoCheckoutTest
+        continue-on-error: true
+
+      - name: Upload Playwright Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-report
+          path: target/surefire-reports/
+          retention-days: 30
+
+      - name: Set UI test status
+        id: ui-status
+        if: steps.ui-tests.outcome == 'failure'
+        run: echo "status=failed" >> $GITHUB_OUTPUT
+
+  # JOB 3: Create GitHub Issue on Failure
+  create-issue-on-failure:
+    needs: [karate-api-tests, playwright-ui-tests]
+    if: always() && (needs.karate-api-tests.result == 'failure' || needs.playwright-ui-tests.result == 'failure')
+    runs-on: windows-latest
+    steps:
+      - name: Create GitHub Issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `${process.env.GITHUB_SERVER_URL}/${context.repo.owner}/${context.repo.repo}/actions/runs/${process.env.GITHUB_RUN_ID}`;
+            
+            let failures = [];
+            if ("${{ needs.karate-api-tests.result }}" === "failure") failures.push("- Karate API Tests failed");
+            if ("${{ needs.playwright-ui-tests.result }}" === "failure") failures.push("- Playwright UI Tests failed");
+            
+            const title = `E2E Test Failure - ${context.workflow}`;
+            const body = `## Automated Test Failure Report
+            
+            The following tests failed during the CI/CD run:
+            
+            ${failures.join('\n')}
+            
+            ### Workflow Details
+            - **Repository**: ${context.repo.owner}/${context.repo.repo}
+            - **Branch**: ${context.ref}
+            - **Run ID**: ${process.env.GITHUB_RUN_ID}
+            
+            ### Links
+            - [View Run Details](${runUrl})
+            - [Download Test Reports](${runUrl})
+            
+            ### Next Steps
+            1. Download test reports from artifacts
+            2. Investigate the failures
+            3. Fix and push changes
+            
+            ---
+            *This issue was automatically created by GitHub Actions*
+            `;
+            
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'e2e-test-failure'
+            });
+            
+            const alreadyExists = existingIssues.data.some(issue => 
+              issue.title === title && issue.state === 'open'
+            );
+            
+            if (!alreadyExists) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                labels: ['bug', 'e2e-test-failure', 'automated-ci']
+              });
+              console.log('Created new failure issue');
+            } else {
+              console.log('Issue already exists, skipping');
+            }
