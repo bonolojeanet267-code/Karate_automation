@@ -1,0 +1,26 @@
+# Maven
+target/
+*.class
+
+# Node / Playwright
+node_modules/
+playwright-report/
+test-results/
+package-lock.json
+package.json
+
+# Allure
+.allure/
+allure-results/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
