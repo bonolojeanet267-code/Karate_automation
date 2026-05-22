@@ -38,26 +38,29 @@ public class SauceDemoCheckoutTest {
         
         System.out.println("SAUCEDEMO E2E CHECKOUT TEST");
 
-
-        // Login
         System.out.println("STEP 1: Login to SauceDemo");
         page.navigate("https://www.saucedemo.com");
+
         page.fill("[data-test=\"username\"]", "standard_user");
         page.fill("[data-test=\"password\"]", "secret_sauce");
+
         page.click("[data-test=\"login-button\"]");
         assertTrue(page.url().contains("inventory"));
-        System.out.println("   [OK] Login successful\n");
+        System.out.println("Login successful\n");
 
-        // Add to cart
+
+        // Add a product to cart
         System.out.println("STEP 2: Add product to cart");
+
         page.click("[data-test=\"add-to-cart-sauce-labs-backpack\"]");
-        System.out.println("   [OK] Product added\n");
+        System.out.println("Product added\n");
 
         // Go to cart
         System.out.println("STEP 3: View cart");
+
         page.click("[data-test=\"shopping-cart-link\"]");
         assertTrue(page.locator(".cart_item").textContent().contains("Sauce Labs Backpack"));
-        System.out.println("   [OK] Cart verified\n");
+        System.out.println("Cart verified\n");
 
         // Checkout
         System.out.println("STEP 4: Checkout");
@@ -67,7 +70,7 @@ public class SauceDemoCheckoutTest {
         page.fill("[data-test=\"postalCode\"]", "2000");
         page.click("[data-test=\"continue\"]");
         page.click("[data-test=\"finish\"]");
-        System.out.println("   [OK] Checkout completed\n");
+        System.out.println("Checkout completed\n");
 
         // Verify
         String message = page.locator(".complete-header").textContent();
