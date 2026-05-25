@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven 3.9'
+        nodejs 'Node 20'
+    }
+
     stages {
 
         stage('Checkout') {
@@ -19,22 +24,26 @@ pipeline {
 
         stage('Run Playwright UI Tests') {
             steps {
-                bat 'mvn test -Dtest=uitests.SauceDemoCheckoutTest'
+                bat 'npm install'
+                bat 'npx playwright install --with-deps'
+                bat 'npx playwright test'
             }
         }
     }
 
     post {
         always {
-
-            // Requires HTML Publisher plugin
-            publishHTML([
+            publishHTML(target: [
+                allowMissing: true,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
                 reportDir: 'target/karate-reports',
                 reportFiles: 'karate-summary.html',
                 reportName: 'Karate Test Report'
             ])
 
-            junit 'target/surefire-reports/*.xml'
+            junit allowEmptyResults: true,
+                  testResults: '**/surefire-reports/*.xml'
         }
     }
 }
