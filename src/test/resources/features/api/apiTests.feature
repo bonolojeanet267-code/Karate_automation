@@ -1,4 +1,7 @@
+@TEST=QA-33
+
 Feature: API Tests
+
 
   Background:
     * url 'https://fakestoreapi.com'

@@ -34,6 +34,7 @@ public class SauceDemoCheckoutTest {
     }
 
     @Test
+    @Tag("QA-33")
     void testFullCheckout() {
         
         System.out.println("SAUCEDEMO E2E CHECKOUT TEST");
