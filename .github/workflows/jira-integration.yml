@@ -1,0 +1,176 @@
+name: Jira Integration - Update Test Results
+
+on:
+  workflow_run:
+    workflows: ["E2E Testing Framework"]
+    types:
+      - completed
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  update-jira:
+    runs-on: windows-latest
+    if: ${{ github.event.workflow_run.conclusion != 'skipped' }}
+    steps:
+      - name: Download Karate test reports
+        uses: actions/download-artifact@v4
+        with:
+          name: karate-test-report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+          path: karate-reports
+
+      - name: Download Playwright test reports
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-test-report
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+          path: playwright-reports
+
+      - name: Parse Karate results
+        id: karate
+        shell: pwsh
+        run: |
+          $jsonPath = "karate-reports/cucumber.json"
+          
+          if (!(Test-Path $jsonPath)) {
+            echo "total=0" >> $env:GITHUB_OUTPUT
+            echo "passed=0" >> $env:GITHUB_OUTPUT
+            echo "failed=0" >> $env:GITHUB_OUTPUT
+            echo "skipped=0" >> $env:GITHUB_OUTPUT
+          } else {
+            $features = Get-Content $jsonPath -Raw | ConvertFrom-Json
+            $total = 0
+            $passed = 0
+            $failed = 0
+            $skipped = 0
+            
+            foreach ($feature in $features) {
+              foreach ($element in $feature.elements) {
+                if ($element.type -eq "scenario") {
+                  $total++
+                  $scenarioStatus = "passed"
+                  
+                  foreach ($step in $element.steps) {
+                    if ($step.result.status -eq "failed") {
+                      $scenarioStatus = "failed"
+                      break
+                    }
+                    if ($step.result.status -eq "skipped" -and $scenarioStatus -ne "failed") {
+                      $scenarioStatus = "skipped"
+                    }
+                  }
+                  
+                  if ($scenarioStatus -eq "passed") { $passed++ }
+                  elseif ($scenarioStatus -eq "failed") { $failed++ }
+                  elseif ($scenarioStatus -eq "skipped") { $skipped++ }
+                }
+              }
+            }
+            
+            echo "total=$total" >> $env:GITHUB_OUTPUT
+            echo "passed=$passed" >> $env:GITHUB_OUTPUT
+            echo "failed=$failed" >> $env:GITHUB_OUTPUT
+            echo "skipped=$skipped" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Parse Playwright results
+        id: playwright
+        shell: pwsh
+        run: |
+          $xmlPath = "playwright-reports/TEST-uitests.SauceDemoCheckoutTest.xml"
+          
+          if (!(Test-Path $xmlPath)) {
+            echo "total=0" >> $env:GITHUB_OUTPUT
+            echo "passed=0" >> $env:GITHUB_OUTPUT
+            echo "failed=0" >> $env:GITHUB_OUTPUT
+            echo "skipped=0" >> $env:GITHUB_OUTPUT
+          } else {
+            [xml]$results = Get-Content $xmlPath
+            $total = $results.testsuite.tests
+            $failed = $results.testsuite.failures
+            $skipped = $results.testsuite.skipped
+            $passed = $total - $failed - $skipped
+            
+            echo "total=$total" >> $env:GITHUB_OUTPUT
+            echo "passed=$passed" >> $env:GITHUB_OUTPUT
+            echo "failed=$failed" >> $env:GITHUB_OUTPUT
+            echo "skipped=$skipped" >> $env:GITHUB_OUTPUT
+          }
+
+      - name: Post results to Jira
+        shell: pwsh
+        env:
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_ISSUE_KEY: "QA-1"
+          API_TOTAL: ${{ steps.karate.outputs.total }}
+          API_PASSED: ${{ steps.karate.outputs.passed }}
+          API_FAILED: ${{ steps.karate.outputs.failed }}
+          API_SKIPPED: ${{ steps.karate.outputs.skipped }}
+          UI_TOTAL: ${{ steps.playwright.outputs.total }}
+          UI_PASSED: ${{ steps.playwright.outputs.passed }}
+          UI_FAILED: ${{ steps.playwright.outputs.failed }}
+          UI_SKIPPED: ${{ steps.playwright.outputs.skipped }}
+        run: |
+          $total = [int]$env:API_TOTAL + [int]$env:UI_TOTAL
+          $passed = [int]$env:API_PASSED + [int]$env:UI_PASSED
+          $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
+          $skipped = [int]$env:API_SKIPPED + [int]$env:UI_SKIPPED
+          
+          if ($failed -gt 0) {
+            $statusText = "FAILED"
+          } elseif ($passed -eq $total -and $total -gt 0) {
+            $statusText = "PASSED"
+          } else {
+            $statusText = "PARTIAL"
+          }
+          
+          $pair = "${env:JIRA_EMAIL}:${env:JIRA_API_TOKEN}"
+          $encoded = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
+          
+          $body = @{
+            body = @"
+          Automation Execution Completed
+          
+          Status: $statusText
+          
+          Test Summary
+          
+          | Test Type | Total | Passed | Failed | Skipped |
+          |-----------|-------|--------|--------|---------|
+          | Karate API | $($env:API_TOTAL) | $($env:API_PASSED) | $($env:API_FAILED) | $($env:API_SKIPPED) |
+          | Playwright UI | $($env:UI_TOTAL) | $($env:UI_PASSED) | $($env:UI_FAILED) | $($env:UI_SKIPPED) |
+          | Overall | $total | $passed | $failed | $skipped |
+          
+          Run Details
+          - Workflow Run ID: ${{ github.event.workflow_run.id }}
+          - Repository: ${{ github.repository }}
+          
+          $(if ($failed -gt 0) { "Action Required - Please investigate the failed tests." } else { "Success - All tests passed successfully." })
+          
+          ---
+          Automated update from GitHub Actions - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')
+          "@
+          } | ConvertTo-Json -Depth 10
+          
+          try {
+            $response = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/3/issue/$($env:JIRA_ISSUE_KEY)/comment" `
+              -Method Post `
+              -Headers @{
+                Authorization = "Basic $encoded"
+                Accept = "application/json"
+                "Content-Type" = "application/json"
+              } `
+              -Body $body
+            
+            Write-Host "Jira comment posted successfully. Comment ID: $($response.id)"
+          }
+          catch {
+            Write-Host "Failed to post Jira comment: $_"
+          }
