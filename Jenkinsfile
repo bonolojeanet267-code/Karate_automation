@@ -17,7 +17,43 @@ pipeline {
         
         stage('Run Playwright UI Tests') {
             steps {
+                bat 'mvn test -Dtest=uipipeline {
+    agent any
+
+    stages {                               // 'stages' block wraps all your stage blocks
+        stage('Checkout') {
+            steps {
+                git branch: 'master',
+                    credentialsId: 'github-token',
+                    url: 'https://github.com/bonolojeanet267-code/Karate_automation.git'
+            }
+        }
+        
+        stage('Run Karate API Tests') {
+            steps {
+                bat 'mvn clean test -Dtest=TestRunner'
+            }
+        }
+        
+        stage('Run Playwright UI Tests') {
+            steps {
                 bat 'mvn test -Dtest=uitests.SauceDemoCheckoutTest'
+            }
+        }
+    }                                      // This closes the 'stages' block
+
+    post {
+        always {
+            // publishHTML step requires the "HTML Publisher" plugin
+            publishHTML([
+                reportDir: 'target/karate-reports',
+                reportFiles: 'karate-summary.html',
+                reportName: 'Karate Test Report'
+            ])
+            junit 'target/surefire-reports/*.xml'
+        }
+    }
+}tests.SauceDemoCheckoutTest'
             }
         }
     }
