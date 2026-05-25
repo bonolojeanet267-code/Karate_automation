@@ -17,7 +17,7 @@ permissions:
 jobs:
   # JOB 1: Karate API Tests
   karate-api-tests:
-    runs-on: windows-latest
+    runs-on: window-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -56,7 +56,7 @@ jobs:
 
   # JOB 2: Playwright Java UI Tests
   playwright-ui-tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -97,7 +97,7 @@ jobs:
   create-issue-on-failure:
     needs: [karate-api-tests, playwright-ui-tests]
     if: always() && (needs.karate-api-tests.result == 'failure' || needs.playwright-ui-tests.result == 'failure')
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Create GitHub Issue
         uses: actions/github-script@v7
