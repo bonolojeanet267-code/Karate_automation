@@ -1,12 +1,13 @@
 pipeline {
     agent any
     
-    stages {
-        stage('Checkout') {
-            steps {
-                git url: 'https://github.com/bonolojeanet267-code/karate-automation.git', branch: 'master'
-            }
-        }
+   stage('Checkout') {
+    steps {
+        git branch: 'master',
+            credentialsId: 'github-token',
+            url: 'https://github.com/bonolojeanet267-code/Karate_automation.git'
+    }
+}
         
         stage('Run Karate API Tests') {
             steps {
