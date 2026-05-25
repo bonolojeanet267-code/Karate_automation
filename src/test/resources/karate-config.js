@@ -15,36 +15,6 @@ function fn() {
         connectTimeout: 30000
     };
 
-    var lambdaTestUsername = karate.properties['LT_USERNAME'] || 'bonolojeanet267';
-    var lambdaTestAccessKey = karate.properties['LT_ACCESS_KEY'] || 'LT_ACCESS_KEY';
-    var lambdaTestUrl = 'https://' + lambdaTestUsername + ':' + lambdaTestAccessKey + '@hub.lambdatest.com/wd/hub';
-
-     var lambdaTestOptions = {
-    build: 'Karate E2E Tests',
-    name: 'Test Run',
-    network: true,
-    video: true,
-    visual: true,
-    console: true
-  };
-
-    var session = {
-    capabilities: {
-      alwaysMatch: {
-        browserName: 'chrome',
-        browserVersion: 'latest',
-        platformName: 'Windows 11',
-        'LT:Options': lambdaTestOptions
-      }
-    }
-  };
-
-config.lambdaTestSession = session;
-  config.lambdaTestUrl = lambdaTestUrl;
-  
-  return config;
-
-    
     if (env == 'dev') {
         config.baseUrl = 'https://fakestoreapi.com';
     } else if (env == 'staging') {
