@@ -108,7 +108,7 @@ jobs:
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-          JIRA_ISSUE_KEY: "QA-1"
+          JIRA_ISSUE_KEY: "QA"
           API_TOTAL: ${{ steps.karate.outputs.total }}
           API_PASSED: ${{ steps.karate.outputs.passed }}
           API_FAILED: ${{ steps.karate.outputs.failed }}
