@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven 3.9'
-        nodejs 'Node 20'
+        // nodejs 'Node 20'
     }
 
     stages {
@@ -24,9 +24,8 @@ pipeline {
 
         stage('Run Playwright UI Tests') {
             steps {
-                bat 'npm install'
-                bat 'npx playwright install --with-deps'
-                bat 'npx playwright test'
+                        bat 'mvn test -Dtest=SauceDemoCheckoutTest -pl . --no-transfer-progress'
+
             }
         }
     }
