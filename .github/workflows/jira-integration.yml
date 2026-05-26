@@ -128,16 +128,17 @@ jobs:
           }
           
           Write-Host "Test Status: $status"
+          Write-Host "API Results: $($env:API_PASSED)/$($env:API_TOTAL) passed"
+          Write-Host "UI Results: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
           
-          # Get Xray authentication token (Xray Cloud API)
           $authBody = @{
             client_id = $env:XRAY_CLIENT_ID
             client_secret = $env:XRAY_CLIENT_SECRET
           } | ConvertTo-Json
           
-          Write-Host "Authenticating to Xray Cloud..."
+          Write-Host "Authenticating to Xray Cloud (EU region)..."
           
-          $authResponse = Invoke-RestMethod -Uri "https://xray.cloud.getxray.app/api/v2/authenticate" `
+          $authResponse = Invoke-RestMethod -Uri "https://eu.xray.cloud.getxray.app/api/v2/authenticate" `
             -Method Post `
             -Body $authBody `
             -ContentType "application/json"
@@ -145,21 +146,20 @@ jobs:
           $token = $authResponse
           Write-Host "Authentication successful"
           
-          # Import test execution results to Xray Cloud
           $testResults = @{
             testExecutionKey = $env:TEST_ISSUE_KEY
             tests = @(
               @{
                 testKey = $env:TEST_ISSUE_KEY
                 status = $status
-                comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed`nUI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+                comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed. UI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
               }
             )
           } | ConvertTo-Json -Depth 10
           
           Write-Host "Importing test results to Xray..."
           
-          $importResponse = Invoke-RestMethod -Uri "https://xray.cloud.getxray.app/api/v2/import/execution" `
+          $importResponse = Invoke-RestMethod -Uri "https://eu.xray.cloud.getxray.app/api/v2/import/execution" `
             -Method Post `
             -Headers @{
               Authorization = "Bearer $token"
@@ -168,8 +168,7 @@ jobs:
             -Body $testResults
           
           Write-Host "Test results imported successfully"
-          Write-Host "Response: $($importResponse | ConvertTo-Json)"
-          
+
       - name: Post comment to Jira
         shell: pwsh
         env:
@@ -188,24 +187,10 @@ jobs:
           $encoded = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
           
           $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
-          $statusIcon = if ($failed -gt 0) { "FAILED" } else { "PASSED" }
+          $statusText = if ($failed -gt 0) { "FAILED" } else { "PASSED" }
           
           $body = @{
-            body = @"
-          Automated Test Execution Completed - Status: $statusIcon
-          
-          Test Summary
-          
-          | Test Type | Total | Passed | Failed |
-          |-----------|-------|--------|--------|
-          | Karate API | $($env:API_TOTAL) | $($env:API_PASSED) | $($env:API_FAILED) |
-          | Playwright UI | $($env:UI_TOTAL) | $($env:UI_PASSED) | $($env:UI_FAILED) |
-          
-          This test execution has been recorded in Xray.
-          
-          ---
-          Automated update from GitHub Actions
-          "@
+            body = "Automated Test Execution Completed - Status: $statusText`n`nTest Summary`n`n| Test Type | Total | Passed | Failed |`n|-----------|-------|--------|--------|`n| Karate API | $($env:API_TOTAL) | $($env:API_PASSED) | $($env:API_FAILED) |`n| Playwright UI | $($env:UI_TOTAL) | $($env:UI_PASSED) | $($env:UI_FAILED) |`n`nThis test execution has been recorded in Xray.`n`n---`nAutomated update from GitHub Actions"
           } | ConvertTo-Json -Depth 10
           
           Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/3/issue/$($env:JIRA_ISSUE_KEY)/comment" `
@@ -213,7 +198,7 @@ jobs:
             -Headers @{
               Authorization = "Basic $encoded"
               Accept = "application/json"
-              "Content-Type" = "application/json"
+              "Content-Type" "application/json"
             } `
             -Body $body
           
