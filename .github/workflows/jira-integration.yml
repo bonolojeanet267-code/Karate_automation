@@ -129,23 +129,25 @@ jobs:
           
           Write-Host "Test Status: $status"
           
-          # Get Xray authentication
+          # Get Xray authentication token (Xray Cloud API)
           $authBody = @{
             client_id = $env:XRAY_CLIENT_ID
             client_secret = $env:XRAY_CLIENT_SECRET
           } | ConvertTo-Json
           
-          $authResponse = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/authenticate" `
+          Write-Host "Authenticating to Xray Cloud..."
+          
+          $authResponse = Invoke-RestMethod -Uri "https://xray.cloud.getxray.app/api/v2/authenticate" `
             -Method Post `
             -Body $authBody `
             -ContentType "application/json"
           
-          # Create test execution with results
+          $token = $authResponse
+          Write-Host "Authentication successful"
+          
+          # Import test execution results to Xray Cloud
           $testResults = @{
-            info = @{
-              summary = "Automated Test Execution - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
-              description = "Test results from GitHub Actions"
-            }
+            testExecutionKey = $env:TEST_ISSUE_KEY
             tests = @(
               @{
                 testKey = $env:TEST_ISSUE_KEY
@@ -155,16 +157,18 @@ jobs:
             )
           } | ConvertTo-Json -Depth 10
           
-          Write-Host "Creating test execution and updating results..."
+          Write-Host "Importing test results to Xray..."
           
-          $response = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/import/execution" `
+          $importResponse = Invoke-RestMethod -Uri "https://xray.cloud.getxray.app/api/v2/import/execution" `
             -Method Post `
-            -Headers @{ Authorization = "Bearer $authResponse" } `
-            -Body $testResults `
-            -ContentType "application/json"
+            -Headers @{
+              Authorization = "Bearer $token"
+              "Content-Type" = "application/json"
+            } `
+            -Body $testResults
           
-          Write-Host "Test execution created/updated successfully"
-          Write-Host "Test Execution Key: $($response.testExecIssue.key)"\
+          Write-Host "Test results imported successfully"
+          Write-Host "Response: $($importResponse | ConvertTo-Json)"
           
       - name: Post comment to Jira
         shell: pwsh
@@ -183,9 +187,12 @@ jobs:
           $pair = "${env:JIRA_EMAIL}:${env:JIRA_API_TOKEN}"
           $encoded = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
           
+          $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
+          $statusIcon = if ($failed -gt 0) { "FAILED" } else { "PASSED" }
+          
           $body = @{
             body = @"
-          Automated Test Execution Completed
+          Automated Test Execution Completed - Status: $statusIcon
           
           Test Summary
           
