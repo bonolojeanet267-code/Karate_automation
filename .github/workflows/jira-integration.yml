@@ -108,7 +108,7 @@ jobs:
           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-          TEST_ISSUE_KEY: "QA"
+          TEST_ISSUE_KEY: "QA-1"
           API_TOTAL: ${{ steps.karate.outputs.total }}
           API_PASSED: ${{ steps.karate.outputs.passed }}
           API_FAILED: ${{ steps.karate.outputs.failed }}
@@ -175,7 +175,7 @@ jobs:
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-          JIRA_ISSUE_KEY: "QA"
+          JIRA_ISSUE_KEY: "QA-1"
           API_PASSED: ${{ steps.karate.outputs.passed }}
           API_FAILED: ${{ steps.karate.outputs.failed }}
           API_TOTAL: ${{ steps.karate.outputs.total }}
