@@ -108,7 +108,7 @@ jobs:
           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
-          JIRA_ISSUE_KEY: "QA-33"
+          TEST_ISSUE_KEY: "QA-33"
           API_TOTAL: ${{ steps.karate.outputs.total }}
           API_PASSED: ${{ steps.karate.outputs.passed }}
           API_FAILED: ${{ steps.karate.outputs.failed }}
@@ -128,47 +128,86 @@ jobs:
           }
           
           Write-Host "Test Status: $status"
-          Write-Host "API: $($env:API_PASSED)/$($env:API_TOTAL) passed"
-          Write-Host "UI: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
           
+          # Get Xray authentication
           $authBody = @{
             client_id = $env:XRAY_CLIENT_ID
             client_secret = $env:XRAY_CLIENT_SECRET
           } | ConvertTo-Json
           
-          Write-Host "Authenticating to Xray..."
+          $authResponse = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/authenticate" `
+            -Method Post `
+            -Body $authBody `
+            -ContentType "application/json"
           
-          try {
-            $authResponse = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/authenticate" `
-              -Method Post `
-              -Body $authBody `
-              -ContentType "application/json"
-            
-            Write-Host "Authentication successful"
-            
-            $testResults = @{
-              testExecutionKey = $env:JIRA_ISSUE_KEY
-              tests = @(
-                @{
-                  testKey = $env:JIRA_ISSUE_KEY
-                  status = $status
-                  comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed`nUI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
-                }
-              )
-            } | ConvertTo-Json -Depth 10
-            
-            Write-Host "Updating Xray test execution..."
-            
-            $response = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/import/execution" `
-              -Method Post `
-              -Headers @{ Authorization = "Bearer $authResponse" } `
-              -Body $testResults `
-              -ContentType "application/json"
-            
-            Write-Host "Xray test execution updated successfully"
-          }
-          catch {
-            Write-Host "Failed to update Xray: $_"
-            Write-Host "Error: $($_.Exception.Message)"
-            throw $_
-          }
+          # Create test execution with results
+          $testResults = @{
+            info = @{
+              summary = "Automated Test Execution - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+              description = "Test results from GitHub Actions"
+            }
+            tests = @(
+              @{
+                testKey = $env:TEST_ISSUE_KEY
+                status = $status
+                comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed`nUI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+              }
+            )
+          } | ConvertTo-Json -Depth 10
+          
+          Write-Host "Creating test execution and updating results..."
+          
+          $response = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/import/execution" `
+            -Method Post `
+            -Headers @{ Authorization = "Bearer $authResponse" } `
+            -Body $testResults `
+            -ContentType "application/json"
+          
+          Write-Host "Test execution created/updated successfully"
+          Write-Host "Test Execution Key: $($response.testExecIssue.key)"\
+          
+      - name: Post comment to Jira
+        shell: pwsh
+        env:
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_ISSUE_KEY: "QA-33"
+          API_PASSED: ${{ steps.karate.outputs.passed }}
+          API_FAILED: ${{ steps.karate.outputs.failed }}
+          API_TOTAL: ${{ steps.karate.outputs.total }}
+          UI_PASSED: ${{ steps.playwright.outputs.passed }}
+          UI_FAILED: ${{ steps.playwright.outputs.failed }}
+          UI_TOTAL: ${{ steps.playwright.outputs.total }}
+        run: |
+          $pair = "${env:JIRA_EMAIL}:${env:JIRA_API_TOKEN}"
+          $encoded = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
+          
+          $body = @{
+            body = @"
+          Automated Test Execution Completed
+          
+          Test Summary
+          
+          | Test Type | Total | Passed | Failed |
+          |-----------|-------|--------|--------|
+          | Karate API | $($env:API_TOTAL) | $($env:API_PASSED) | $($env:API_FAILED) |
+          | Playwright UI | $($env:UI_TOTAL) | $($env:UI_PASSED) | $($env:UI_FAILED) |
+          
+          This test execution has been recorded in Xray.
+          
+          ---
+          Automated update from GitHub Actions
+          "@
+          } | ConvertTo-Json -Depth 10
+          
+          Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/3/issue/$($env:JIRA_ISSUE_KEY)/comment" `
+            -Method Post `
+            -Headers @{
+              Authorization = "Basic $encoded"
+              Accept = "application/json"
+              "Content-Type" = "application/json"
+            } `
+            -Body $body
+          
+          Write-Host "Comment posted to Jira"
