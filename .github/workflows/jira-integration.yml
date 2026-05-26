@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   update-jira:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion != 'skipped' }}
     steps:
       - name: Download Karate test reports
@@ -105,8 +105,8 @@ jobs:
       - name: Update Xray Test Results
         shell: pwsh
         env:
-          JIRA_CLIENT_ID: ${{ secrets.JIRA_CLIENT_ID }}
-          JIRA_CLIENT_SECRET: ${{ secrets.JIRA_CLIENT_SECRET }}
+          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
+          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_ISSUE_KEY: "QA-33"
           API_TOTAL: ${{ steps.karate.outputs.total }}
@@ -121,40 +121,54 @@ jobs:
           $total = [int]$env:API_TOTAL + [int]$env:UI_TOTAL
           $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
           
-          # Determine test status
           if ($failed -gt 0) {
             $status = "FAIL"
           } else {
             $status = "PASS"
           }
           
-          # Get Xray authentication
+          Write-Host "Test Status: $status"
+          Write-Host "API: $($env:API_PASSED)/$($env:API_TOTAL) passed"
+          Write-Host "UI: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+          
           $authBody = @{
-            client_id = $env:JIRA_CLIENT_ID
-            client_secret = $env:JIRA_CLIENT_SECRET
+            client_id = $env:XRAY_CLIENT_ID
+            client_secret = $env:XRAY_CLIENT_SECRET
           } | ConvertTo-Json
           
-          $authResponse = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/authenticate" `
-            -Method Post `
-            -Body $authBody `
-            -ContentType "application/json"
+          Write-Host "Authenticating to Xray..."
           
-          # Update test execution in Xray
-          $testResults = @{
-            testExecutionKey = $env:JIRA_ISSUE_KEY
-            tests = @(
-              @{
-                testKey = $env:JIRA_ISSUE_KEY
-                status = $status
-                comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed`nUI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
-              }
-            )
-          } | ConvertTo-Json -Depth 10
-          
-          Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/import/execution" `
-            -Method Post `
-            -Headers @{ Authorization = "Bearer $authResponse" } `
-            -Body $testResults `
-            -ContentType "application/json"
-          
-          Write-Host "Xray test execution updated successfully!"
+          try {
+            $authResponse = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/authenticate" `
+              -Method Post `
+              -Body $authBody `
+              -ContentType "application/json"
+            
+            Write-Host "Authentication successful"
+            
+            $testResults = @{
+              testExecutionKey = $env:JIRA_ISSUE_KEY
+              tests = @(
+                @{
+                  testKey = $env:JIRA_ISSUE_KEY
+                  status = $status
+                  comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed`nUI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+                }
+              )
+            } | ConvertTo-Json -Depth 10
+            
+            Write-Host "Updating Xray test execution..."
+            
+            $response = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/import/execution" `
+              -Method Post `
+              -Headers @{ Authorization = "Bearer $authResponse" } `
+              -Body $testResults `
+              -ContentType "application/json"
+            
+            Write-Host "Xray test execution updated successfully"
+          }
+          catch {
+            Write-Host "Failed to update Xray: $_"
+            Write-Host "Error: $($_.Exception.Message)"
+            throw $_
+          }
