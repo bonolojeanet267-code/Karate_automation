@@ -17,7 +17,7 @@ permissions:
 jobs:
   # JOB 1: Karate API Tests
   karate-api-tests:
-    runs-on: window-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
