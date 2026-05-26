@@ -102,11 +102,11 @@ jobs:
             echo "skipped=$skipped" >> $env:GITHUB_OUTPUT
           }
 
-      - name: Post results to Jira
+      - name: Update Xray Test Results
         shell: pwsh
         env:
-          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
-          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_CLIENT_ID: ${{ secrets.JIRA_CLIENT_ID }}
+          JIRA_CLIENT_SECRET: ${{ secrets.JIRA_CLIENT_SECRET }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_ISSUE_KEY: "QA-33"
           API_TOTAL: ${{ steps.karate.outputs.total }}
@@ -119,59 +119,42 @@ jobs:
           UI_SKIPPED: ${{ steps.playwright.outputs.skipped }}
         run: |
           $total = [int]$env:API_TOTAL + [int]$env:UI_TOTAL
-          $passed = [int]$env:API_PASSED + [int]$env:UI_PASSED
           $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
-          $skipped = [int]$env:API_SKIPPED + [int]$env:UI_SKIPPED
           
+          # Determine test status
           if ($failed -gt 0) {
-            $statusText = "FAILED"
-          } elseif ($passed -eq $total -and $total -gt 0) {
-            $statusText = "PASSED"
+            $status = "FAIL"
           } else {
-            $statusText = "PARTIAL"
+            $status = "PASS"
           }
           
-          $pair = "${env:JIRA_EMAIL}:${env:JIRA_API_TOKEN}"
-          $encoded = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
+          # Get Xray authentication
+          $authBody = @{
+            client_id = $env:JIRA_CLIENT_ID
+            client_secret = $env:JIRA_CLIENT_SECRET
+          } | ConvertTo-Json
           
-          $body = @{
-            body = @"
-          Automation Execution Completed
+          $authResponse = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/authenticate" `
+            -Method Post `
+            -Body $authBody `
+            -ContentType "application/json"
           
-          Status: $statusText
-          
-          Test Summary
-          
-          | Test Type | Total | Passed | Failed | Skipped |
-          |-----------|-------|--------|--------|---------|
-          | Karate API | $($env:API_TOTAL) | $($env:API_PASSED) | $($env:API_FAILED) | $($env:API_SKIPPED) |
-          | Playwright UI | $($env:UI_TOTAL) | $($env:UI_PASSED) | $($env:UI_FAILED) | $($env:UI_SKIPPED) |
-          | Overall | $total | $passed | $failed | $skipped |
-          
-          Run Details
-          - Workflow Run ID: ${{ github.event.workflow_run.id }}
-          - Repository: ${{ github.repository }}
-          
-          $(if ($failed -gt 0) { "Action Required - Please investigate the failed tests." } else { "Success - All tests passed successfully." })
-          
-          ---
-          Automated update from GitHub Actions - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')
-          "@
+          # Update test execution in Xray
+          $testResults = @{
+            testExecutionKey = $env:JIRA_ISSUE_KEY
+            tests = @(
+              @{
+                testKey = $env:JIRA_ISSUE_KEY
+                status = $status
+                comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed`nUI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+              }
+            )
           } | ConvertTo-Json -Depth 10
           
-          try {
-            $response = Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/3/issue/$($env:JIRA_ISSUE_KEY)/comment" `
-              -Method Post `
-              -Headers @{
-                Authorization = "Basic $encoded"
-                Accept = "application/json"
-                "Content-Type" = "application/json"
-              } `
-              -Body $body
-            
-            Write-Host "Jira comment posted successfully. Comment ID: $($response.id)"
-          }
-          catch {
-            Write-Host "Failed to post Jira comment: $_"
-          }
-
+          Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/2/import/execution" `
+            -Method Post `
+            -Headers @{ Authorization = "Bearer $authResponse" } `
+            -Body $testResults `
+            -ContentType "application/json"
+          
+          Write-Host "Xray test execution updated successfully!"
