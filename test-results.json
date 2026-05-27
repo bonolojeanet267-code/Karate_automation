@@ -1,0 +1,158 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\Bonolo\\Main.java\\Documents\\KarateProjects\\karate-automation\\playwright.config.js",
+    "rootDir": "C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Bonolo/Main.java/Documents/KarateProjects/karate-automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "junit.xml"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "SauceDemoCheckoutTest.spec.js",
+      "file": "SauceDemoCheckoutTest.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "SauceDemo full checkout flow",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6552,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "SAUCEDEMO E2E CHECKOUT TEST\n"
+                    },
+                    {
+                      "text": "STEP 1: Login to SauceDemo\n"
+                    },
+                    {
+                      "text": "Login successful\n\n"
+                    },
+                    {
+                      "text": "STEP 2: Add product to cart\n"
+                    },
+                    {
+                      "text": "Product added\n\n"
+                    },
+                    {
+                      "text": "STEP 3: View cart\n"
+                    },
+                    {
+                      "text": "Cart verified\n\n"
+                    },
+                    {
+                      "text": "STEP 4: Checkout\n"
+                    },
+                    {
+                      "text": "Checkout completed\n\n"
+                    },
+                    {
+                      "text": "STEP 5: Verification\n"
+                    },
+                    {
+                      "text": "   [OK] Thank you for your order!\n"
+                    },
+                    {
+                      "text": "TEST PASSED!\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-05-27T14:43:08.227Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "11c1ff93b75c53ea833d-39bde8a92a99315ebda4",
+          "file": "SauceDemoCheckoutTest.spec.js",
+          "line": 3,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-05-27T14:43:07.262Z",
+    "duration": 8678.932,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
