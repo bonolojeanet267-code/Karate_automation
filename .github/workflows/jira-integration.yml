@@ -15,14 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion != 'skipped' }}
     steps:
-      - name: Download Karate test reports
-        uses: actions/download-artifact@v4
-        with:
-          name: karate-test-report
-          run-id: ${{ github.event.workflow_run.id }}
-          github-token: ${{ github.token }}
-          path: karate-reports
-
       - name: Download Playwright test reports
         uses: actions/download-artifact@v4
         with:
@@ -31,95 +23,108 @@ jobs:
           github-token: ${{ github.token }}
           path: playwright-reports
 
-      - name: Parse Karate results
-        id: karate
+      - name: Parse Playwright results
+        id: playwright
         shell: pwsh
         run: |
-          $jsonPath = "karate-reports/cucumber.json"
+          $jsonPath = "playwright-reports/test-results.json"
+          $junitPath = "playwright-reports/junit.xml"
           
-          if (!(Test-Path $jsonPath)) {
-            echo "total=0" >> $env:GITHUB_OUTPUT
-            echo "passed=0" >> $env:GITHUB_OUTPUT
-            echo "failed=0" >> $env:GITHUB_OUTPUT
-            echo "skipped=0" >> $env:GITHUB_OUTPUT
-          } else {
-            $features = Get-Content $jsonPath -Raw | ConvertFrom-Json
-            $total = 0
-            $passed = 0
-            $failed = 0
-            $skipped = 0
+          if (Test-Path $jsonPath) {
+            Write-Host "Found JSON report at: $jsonPath"
+            $results = Get-Content $jsonPath -Raw | ConvertFrom-Json
             
-            foreach ($feature in $features) {
-              foreach ($element in $feature.elements) {
-                if ($element.type -eq "scenario") {
+            if ($results.stats) {
+              $total = $results.stats.tests
+              $passed = $results.stats.passed
+              $failed = $results.stats.failed
+              $skipped = $results.stats.skipped
+            } elseif ($results.suites) {
+              $total = 0
+              $passed = 0
+              $failed = 0
+              $skipped = 0
+              
+              foreach ($suite in $results.suites) {
+                foreach ($spec in $suite.specs) {
                   $total++
-                  $scenarioStatus = "passed"
-                  
-                  foreach ($step in $element.steps) {
-                    if ($step.result.status -eq "failed") {
-                      $scenarioStatus = "failed"
-                      break
-                    }
-                    if ($step.result.status -eq "skipped" -and $scenarioStatus -ne "failed") {
-                      $scenarioStatus = "skipped"
-                    }
+                  if ($spec.ok) {
+                    $passed++
+                  } elseif ($spec.tests[0].results[0].status -eq "skipped") {
+                    $skipped++
+                  } else {
+                    $failed++
                   }
-                  
-                  if ($scenarioStatus -eq "passed") { $passed++ }
-                  elseif ($scenarioStatus -eq "failed") { $failed++ }
-                  elseif ($scenarioStatus -eq "skipped") { $skipped++ }
                 }
               }
+            } else {
+              $total = ($results.suites | Measure-Object).Count
+              $passed = ($results.suites | Where-Object { $_.ok -eq $true }).Count
+              $failed = $total - $passed
+              $skipped = 0
             }
             
             echo "total=$total" >> $env:GITHUB_OUTPUT
             echo "passed=$passed" >> $env:GITHUB_OUTPUT
             echo "failed=$failed" >> $env:GITHUB_OUTPUT
             echo "skipped=$skipped" >> $env:GITHUB_OUTPUT
+            echo "exists=true" >> $env:GITHUB_OUTPUT
+            
+            Write-Host "Results: $passed/$total passed, $failed failed, $skipped skipped"
           }
-
-      - name: Parse Playwright results
-        id: playwright
-        shell: pwsh
-        run: |
-          $xmlPath = "playwright-reports/TEST-uitests.SauceDemoCheckoutTest.xml"
-          
-          if (!(Test-Path $xmlPath)) {
-            echo "total=0" >> $env:GITHUB_OUTPUT
-            echo "passed=0" >> $env:GITHUB_OUTPUT
-            echo "failed=0" >> $env:GITHUB_OUTPUT
-            echo "skipped=0" >> $env:GITHUB_OUTPUT
-          } else {
-            [xml]$results = Get-Content $xmlPath
-            $total = $results.testsuite.tests
-            $failed = $results.testsuite.failures
-            $skipped = $results.testsuite.skipped
+          elseif (Test-Path $junitPath) {
+            Write-Host "Found JUnit report at: $junitPath"
+            [xml]$results = Get-Content $junitPath
+            
+            if ($results.testsuites) {
+              $total = [int]$results.testsuites.tests
+              $failed = [int]$results.testsuites.failures
+              $skipped = [int]$results.testsuites.skipped
+            } elseif ($results.testsuite) {
+              $total = [int]$results.testsuite.tests
+              $failed = [int]$results.testsuite.failures
+              $skipped = [int]$results.testsuite.skipped
+            } else {
+              $total = 0
+              $failed = 0
+              $skipped = 0
+            }
+            
             $passed = $total - $failed - $skipped
             
             echo "total=$total" >> $env:GITHUB_OUTPUT
             echo "passed=$passed" >> $env:GITHUB_OUTPUT
             echo "failed=$failed" >> $env:GITHUB_OUTPUT
             echo "skipped=$skipped" >> $env:GITHUB_OUTPUT
+            echo "exists=true" >> $env:GITHUB_OUTPUT
+            
+            Write-Host "Results: $passed/$total passed, $failed failed, $skipped skipped"
+          }
+          else {
+            Write-Host "No Playwright report found"
+            echo "total=0" >> $env:GITHUB_OUTPUT
+            echo "passed=0" >> $env:GITHUB_OUTPUT
+            echo "failed=0" >> $env:GITHUB_OUTPUT
+            echo "skipped=0" >> $env:GITHUB_OUTPUT
+            echo "exists=false" >> $env:GITHUB_OUTPUT
           }
 
       - name: Update Xray Test Results
+        if: ${{ steps.playwright.outputs.exists == 'true' && steps.playwright.outputs.total > 0 }}
         shell: pwsh
         env:
           XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
           XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           TEST_ISSUE_KEY: "QA-1"
-          API_TOTAL: ${{ steps.karate.outputs.total }}
-          API_PASSED: ${{ steps.karate.outputs.passed }}
-          API_FAILED: ${{ steps.karate.outputs.failed }}
-          API_SKIPPED: ${{ steps.karate.outputs.skipped }}
-          UI_TOTAL: ${{ steps.playwright.outputs.total }}
-          UI_PASSED: ${{ steps.playwright.outputs.passed }}
-          UI_FAILED: ${{ steps.playwright.outputs.failed }}
-          UI_SKIPPED: ${{ steps.playwright.outputs.skipped }}
+          TOTAL: ${{ steps.playwright.outputs.total }}
+          PASSED: ${{ steps.playwright.outputs.passed }}
+          FAILED: ${{ steps.playwright.outputs.failed }}
+          SKIPPED: ${{ steps.playwright.outputs.skipped }}
         run: |
-          $total = [int]$env:API_TOTAL + [int]$env:UI_TOTAL
-          $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
+          $failed = [int]$env:FAILED
+          $total = [int]$env:TOTAL
+          $passed = [int]$env:PASSED
           
           if ($failed -gt 0) {
             $status = "FAIL"
@@ -127,79 +132,127 @@ jobs:
             $status = "PASS"
           }
           
+          $passRate = if ($total -gt 0) { [math]::Round(($passed/$total)*100, 1) } else { 0 }
+          
           Write-Host "Test Status: $status"
-          Write-Host "API Results: $($env:API_PASSED)/$($env:API_TOTAL) passed"
-          Write-Host "UI Results: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+          Write-Host "Total Tests: $total"
+          Write-Host "Passed: $passed"
+          Write-Host "Failed: $failed"
+          Write-Host "Pass Rate: $passRate%"
           
           $authBody = @{
             client_id = $env:XRAY_CLIENT_ID
             client_secret = $env:XRAY_CLIENT_SECRET
           } | ConvertTo-Json
           
-          Write-Host "Authenticating to Xray Cloud (EU region)..."
-          
-          $authResponse = Invoke-RestMethod -Uri "https://eu.xray.cloud.getxray.app/api/v2/authenticate" `
-            -Method Post `
-            -Body $authBody `
-            -ContentType "application/json"
-          
-          $token = $authResponse
-          Write-Host "Authentication successful"
-          
-          $testResults = @{
-            testExecutionKey = $env:TEST_ISSUE_KEY
-            tests = @(
-              @{
-                testKey = $env:TEST_ISSUE_KEY
-                status = $status
-                comment = "API Tests: $($env:API_PASSED)/$($env:API_TOTAL) passed. UI Tests: $($env:UI_PASSED)/$($env:UI_TOTAL) passed"
+          try {
+            $authResponse = Invoke-RestMethod -Uri "https://eu.xray.cloud.getxray.app/api/v2/authenticate" `
+              -Method Post `
+              -Body $authBody `
+              -ContentType "application/json" `
+              -ErrorAction Stop
+            
+            $token = $authResponse
+            Write-Host "Xray authentication successful"
+            
+            $testResults = @{
+              testExecutionKey = $env:TEST_ISSUE_KEY
+              info = @{
+                summary = "Playwright E2E Test Execution - $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
+                description = "Automated E2E test execution from GitHub Actions"
               }
-            )
-          } | ConvertTo-Json -Depth 10
-          
-          Write-Host "Importing test results to Xray..."
-          
-          $importResponse = Invoke-RestMethod -Uri "https://eu.xray.cloud.getxray.app/api/v2/import/execution" `
-            -Method Post `
-            -Headers @{
-              Authorization = "Bearer $token"
-              "Content-Type" = "application/json"
-            } `
-            -Body $testResults
-          
-          Write-Host "Test results imported successfully"
+              tests = @(
+                @{
+                  testKey = $env:TEST_ISSUE_KEY
+                  status = $status
+                  comment = "Playwright E2E Tests: $passed/$total passed ($passRate% success rate). Failed: $failed, Skipped: $($env:SKIPPED)"
+                  examples = ""
+                  steps = @()
+                }
+              )
+            } | ConvertTo-Json -Depth 10
+            
+            Write-Host "Importing test results to Xray..."
+            
+            $importResponse = Invoke-RestMethod -Uri "https://eu.xray.cloud.getxray.app/api/v2/import/execution" `
+              -Method Post `
+              -Headers @{
+                Authorization = "Bearer $token"
+                "Content-Type" = "application/json"
+              } `
+              -Body $testResults `
+              -ErrorAction Stop
+            
+            Write-Host "Test results imported to Xray successfully"
+          }
+          catch {
+            Write-Host "Failed to update Xray: $_"
+          }
 
       - name: Post comment to Jira
+        if: ${{ steps.playwright.outputs.exists == 'true' && steps.playwright.outputs.total > 0 }}
         shell: pwsh
         env:
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
           JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
           JIRA_ISSUE_KEY: "QA-1"
-          API_PASSED: ${{ steps.karate.outputs.passed }}
-          API_FAILED: ${{ steps.karate.outputs.failed }}
-          API_TOTAL: ${{ steps.karate.outputs.total }}
-          UI_PASSED: ${{ steps.playwright.outputs.passed }}
-          UI_FAILED: ${{ steps.playwright.outputs.failed }}
-          UI_TOTAL: ${{ steps.playwright.outputs.total }}
+          TOTAL: ${{ steps.playwright.outputs.total }}
+          PASSED: ${{ steps.playwright.outputs.passed }}
+          FAILED: ${{ steps.playwright.outputs.failed }}
+          SKIPPED: ${{ steps.playwright.outputs.skipped }}
         run: |
+          $total = [int]$env:TOTAL
+          $passed = [int]$env:PASSED
+          $failed = [int]$env:FAILED
+          $skipped = [int]$env:SKIPPED
+          $passRate = if ($total -gt 0) { [math]::Round(($passed/$total)*100, 1) } else { 0 }
+          
           $pair = "${env:JIRA_EMAIL}:${env:JIRA_API_TOKEN}"
           $encoded = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($pair))
           
-          $failed = [int]$env:API_FAILED + [int]$env:UI_FAILED
           $statusText = if ($failed -gt 0) { "FAILED" } else { "PASSED" }
           
+          $commentText = "Playwright E2E Test Execution Completed - Status: $statusText`n`n"
+          $commentText += "Test Summary`n`n"
+          $commentText += "| Metric | Value |`n"
+          $commentText += "|--------|-------|`n"
+          $commentText += "| Total Tests | $total |`n"
+          $commentText += "| Passed | $passed |`n"
+          $commentText += "| Failed | $failed |`n"
+          $commentText += "| Skipped | $skipped |`n"
+          $commentText += "| Pass Rate | $passRate% |`n`n"
+          $commentText += "Test Details`n`n"
+          $commentText += "- Framework: Playwright (JavaScript)`n"
+          $commentText += "- Test File: SauceDemo E2E Tests`n"
+          $commentText += "- Execution Time: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss UTC')`n`n"
+          $commentText += "Test Scenario Executed:`n"
+          $commentText += "1. Login to SauceDemo`n"
+          $commentText += "2. Add product to cart`n"
+          $commentText += "3. View cart`n"
+          $commentText += "4. Checkout process`n"
+          $commentText += "5. Order verification`n`n"
+          $commentText += "---`n"
+          $commentText += "This test execution has been recorded in Xray.`n"
+          $commentText += "Automated update from GitHub Actions"
+          
           $body = @{
-            body = "Automated Test Execution Completed - Status: $statusText`n`nTest Summary`n`n| Test Type | Total | Passed | Failed |`n|-----------|-------|--------|--------|`n| Karate API | $($env:API_TOTAL) | $($env:API_PASSED) | $($env:API_FAILED) |`n| Playwright UI | $($env:UI_TOTAL) | $($env:UI_PASSED) | $($env:UI_FAILED) |`n`nThis test execution has been recorded in Xray.`n`n---`nAutomated update from GitHub Actions"
+            body = $commentText
           } | ConvertTo-Json -Depth 10
           
-          Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/3/issue/$($env:JIRA_ISSUE_KEY)/comment" `
-            -Method Post `
-            -Headers @{
-              Authorization = "Basic $encoded"
-              Accept = "application/json"
-              "Content-Type" "application/json"
-            } `
-            -Body $body
-          
-          Write-Host "Comment posted to Jira"
+          try {
+            Invoke-RestMethod -Uri "$($env:JIRA_BASE_URL)/rest/api/3/issue/$($env:JIRA_ISSUE_KEY)/comment" `
+              -Method Post `
+              -Headers @{
+                Authorization = "Basic $encoded"
+                Accept = "application/json"
+                "Content-Type" = "application/json"
+              } `
+              -Body $body `
+              -ErrorAction Stop
+            
+            Write-Host "Comment posted to Jira successfully"
+          }
+          catch {
+            Write-Host "Failed to post comment to Jira: $_"
+          }
