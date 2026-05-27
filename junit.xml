@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="8.678932000000001">
-<testsuite name="SauceDemoCheckoutTest.spec.js" timestamp="2026-05-27T14:43:07.291Z" hostname="" tests="1" failures="0" skipped="0" time="6.552" errors="0">
-<testcase name="SauceDemo full checkout flow" classname="SauceDemoCheckoutTest.spec.js" time="6.552">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.557447">
+<testsuite name="SauceDemoCheckoutTest.spec.js" timestamp="2026-05-27T17:21:02.205Z" hostname="" tests="1" failures="0" skipped="0" time="12.43" errors="0">
+<testcase name="SauceDemo full checkout flow" classname="SauceDemoCheckoutTest.spec.js" time="12.43">
 <system-out>
 <![CDATA[SAUCEDEMO E2E CHECKOUT TEST
 STEP 1: Login to SauceDemo

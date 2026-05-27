@@ -26,6 +26,36 @@
     <dependencies>
 
     <dependency>
+        <groupId>com.intuit.karate</groupId>
+        <artifactId>karate-junit5</artifactId>
+        <version>1.4.1</version>
+        <scope>test</scope>
+    </dependency>
+
+     <dependency>
+        <groupId>com.intuit.karate</groupId>
+        <artifactId>karate-core</artifactId>
+        <version>1.4.1</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- For consolidated Cucumber reports -->
+    <dependency>
+        <groupId>net.masterthought</groupId>
+        <artifactId>maven-cucumber-reporting</artifactId>
+        <version>5.7.5</version>
+        <scope>test</scope>
+    </dependency>
+    
+    <!-- For FileUtils to find JSON files -->
+    <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.11.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
     <groupId>com.google.code.gson</groupId>
     <artifactId>gson</artifactId>
     <version>2.10.1</version>
