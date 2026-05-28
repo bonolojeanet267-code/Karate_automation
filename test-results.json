@@ -88,7 +88,7 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 12430,
+                  "duration": 15599,
                   "errors": [],
                   "stdout": [
                     {
@@ -130,9 +130,15 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-05-27T17:21:03.383Z",
+                  "startTime": "2026-05-27T18:38:59.049Z",
                   "annotations": [],
-                  "attachments": []
+                  "attachments": [
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Bonolo\\Main.java\\Documents\\KarateProjects\\karate-automation\\test-results\\SauceDemoCheckoutTest-SauceDemo-full-checkout-flow\\trace.zip"
+                    }
+                  ]
                 }
               ],
               "status": "expected"
@@ -148,8 +154,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-27T17:21:02.178Z",
-    "duration": 16557.447,
+    "startTime": "2026-05-27T18:38:56.857Z",
+    "duration": 18498.364,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
