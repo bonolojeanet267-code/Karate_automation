@@ -1,0 +1,45 @@
+{
+  "name": "karate-automation",
+  "version": "1.0.0",
+  "description": "Karate API Automation with Playwright UI Tests",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.60.0",
+    "playwright-core": "^1.60.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0"
+  },
+  "scripts": {
+    "test": "npm run test:playwright",
+    "test:playwright": "npx playwright test",
+    "test:playwright:headed": "npx playwright test --headed",
+    "test:playwright:debug": "npx playwright test --debug",
+    "test:playwright:ui": "npx playwright test --ui",
+    "test:playwright:chrome": "npx playwright test --project=chromium",
+    "report:playwright": "npx playwright show-report",
+    "codegen": "npx playwright codegen https://www.saucedemo.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonolojeanet267-code/Karate_automation.git"
+  },
+  "keywords": [
+    "karate",
+    "playwright",
+    "automation",
+    "testing",
+    "api",
+    "ui"
+  ],
+  "author": "Bonolo Mohlakoane",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/bonolojeanet267-code/Karate_automation/issues"
+  },
+  "homepage": "https://github.com/bonolojeanet267-code/Karate_automation#readme"
+}
