@@ -43,11 +43,11 @@ stages {
     stage('Run Playwright UI Tests') {
         steps {
 
-            // Install Node.js dependencies
+            // Install dependencies
             bat 'npm ci'
 
             // Install Playwright browsers
-            bat 'npx playwright install --with-deps'
+            bat 'npx playwright install'
 
             // Run Playwright tests
             bat 'npx playwright test --reporter=json,junit,html'
@@ -66,12 +66,12 @@ stages {
                     reportName: 'Playwright Test Report'
                 ])
 
-                // Publish Playwright JUnit results
+                // Publish JUnit results
                 junit allowEmptyResults: true,
                        testResults: 'junit.xml'
 
-                // Archive artifacts
-                archiveArtifacts artifacts: 'test-results.json, junit.xml, playwright-report/**',
+                // Archive reports
+                archiveArtifacts artifacts: 'playwright-report/**, junit.xml',
                                  allowEmptyArchive: true
             }
         }
