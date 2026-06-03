@@ -28,7 +28,12 @@ class TestRunner {
     Karate testFakeStoreAuth() {
         return Karate.run("classpath:features/fakeStoreAuthentication.feature");
     }
-    
+
+    @Karate.Test
+    Karate testDatabase() {
+        return Karate .run("classpath:features/api/database.feature");
+    }
+
     // Run ALL tests and generate a single summary report
     @Test
     void testAllFeatures() {

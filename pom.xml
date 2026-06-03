@@ -21,24 +21,25 @@
         <karate.version>1.4.1</karate.version>
         <junit.jupiter.version>5.10.2</junit.jupiter.version>
         <gatling.version>3.9.5</gatling.version>
+        <karate.env>dev</karate.env>  <!-- ADD THIS -->
     </properties>
 
     <dependencies>
 
-    <dependency>
-        <groupId>com.intuit.karate</groupId>
-        <artifactId>karate-junit5</artifactId>
-        <version>1.4.1</version>
-        <scope>test</scope>
-    </dependency>
+<!--    <dependency>-->
+<!--        <groupId>com.intuit.karate</groupId>-->
+<!--        <artifactId>karate-junit5</artifactId>-->
+<!--        <version>1.4.1</version>-->
+<!--        <scope>test</scope>-->
+<!--    </dependency>-->
 
-     <dependency>
-        <groupId>com.intuit.karate</groupId>
-        <artifactId>karate-core</artifactId>
-        <version>1.4.1</version>
-        <scope>test</scope>
-    </dependency>
-    
+<!--     <dependency>-->
+<!--        <groupId>com.intuit.karate</groupId>-->
+<!--        <artifactId>karate-core</artifactId>-->
+<!--        <version>1.4.1</version>-->
+<!--        <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    -->
     <!-- For consolidated Cucumber reports -->
     <dependency>
         <groupId>net.masterthought</groupId>
@@ -66,6 +67,7 @@
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
     <version>8.0.33</version>
+    <scope>test</scope>
 </dependency>
 
                 <!-- Playwright Java for UI Automation -->
