@@ -56,19 +56,25 @@
         <scope>test</scope>
     </dependency>
 
-    <dependency>
-    <groupId>com.google.code.gson</groupId>
-    <artifactId>gson</artifactId>
-    <version>2.10.1</version>
-</dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
 
-        <!-- MySQL Database -->
-<dependency>
-    <groupId>mysql</groupId>
-    <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.33</version>
-    <scope>test</scope>
-</dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+
+
 
                 <!-- Playwright Java for UI Automation -->
         <dependency>
@@ -76,6 +82,8 @@
             <artifactId>playwright</artifactId>
             <version>1.58.0</version>
         </dependency>
+
+
 
         <!-- Karate Core -->
         <dependency>

@@ -3,6 +3,7 @@ Feature: Fake Store Authentication Tests
   Background:
     * url 'https://fakestoreapi.com'
 
+    @52
   Scenario: User login
     Given path '/auth/login'
     And request

@@ -3,7 +3,7 @@ Feature: Fake Store API Tests
   Background:
     * url 'https://fakestoreapi.com'
 
-  @getProducts
+  @51
   Scenario: Get all products
     Given path '/products'
     When method GET
@@ -11,6 +11,7 @@ Feature: Fake Store API Tests
     And print 'Response:', response
 
 
+    @53
   Scenario: Create a new product
   Given path '/products'
   And request
@@ -28,6 +29,7 @@ Feature: Fake Store API Tests
   And match response.id == '#number'
   And print 'Created Product:', response
 
+      @54
   Scenario: Get a product by ID
     Given path '/products/5'
     When method GET
@@ -36,6 +38,7 @@ Feature: Fake Store API Tests
     And print 'Product with ID 5:', response
 
 
+        @55
     Scenario: Update a product
      Given path '/products/5'
         And request
@@ -51,6 +54,7 @@ Feature: Fake Store API Tests
         When method PUT
         Then status 200
 
+          @56
     Scenario: Delete a product
     Given path '/products/4'
     When method DELETE

@@ -9,7 +9,6 @@ public class DbUtils {
     private static final String USER = "root";
     private static final String PASS = "!BJdialdial30";
 
-    // For SELECT queries - returns list of rows
     public static List<Map<String, Object>> query(String sql) throws Exception {
         List<Map<String, Object>> results = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS);

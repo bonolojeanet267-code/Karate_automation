@@ -5,8 +5,21 @@ import com.intuit.karate.Runner;
 import com.intuit.karate.junit5.Karate;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import utils.TestRailReporter;
+
 
 class TestRunner {
+
+    @Test
+    void testParallel() {
+
+        Results results = Runner.path("classpath:features")
+                .parallel(1);
+
+        TestRailReporter.publish(results);
+
+        System.out.println("Test Results: " + results.getFailCount());
+    }
 
     // Your existing individual test methods
     @Karate.Test

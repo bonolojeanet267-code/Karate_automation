@@ -3,6 +3,7 @@ Feature: Fake Store Users API Tests
   Background:
     * url 'https://fakestoreapi.com'
 
+    @46
   Scenario: Get all users
     Given path '/users'
     When method GET
@@ -10,6 +11,7 @@ Feature: Fake Store Users API Tests
     And match response == '#[]'
     And print 'Users:', response
 
+      @47
     Scenario: Add a new user
     Given path '/users'
     And request
@@ -40,6 +42,8 @@ Feature: Fake Store Users API Tests
     And match response.id == '#number'
     And print 'Created User:', response
 
+
+      @50
     Scenario: Get a user by ID
     Given path '/users/1'
     When method GET
@@ -47,6 +51,7 @@ Feature: Fake Store Users API Tests
     And match response.id == 1
     And print 'User with ID 1:', response
 
+      @48
     Scenario: Update a user
      Given path '/users/1'
         And request
@@ -58,6 +63,7 @@ Feature: Fake Store Users API Tests
         When method PUT
         Then status 200
 
+     @49
     Scenario: Delete a user
     Given path '/users/1'
     When method DELETE

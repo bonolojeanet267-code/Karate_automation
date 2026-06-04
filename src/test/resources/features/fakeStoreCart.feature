@@ -3,6 +3,7 @@ Feature: Fake Store API Tests
   Background:
     * url 'https://fakestoreapi.com'
 
+    @51
     Scenario: Get all products in cart
 
     Given path '/carts'
