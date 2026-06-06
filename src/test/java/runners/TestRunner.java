@@ -21,7 +21,18 @@ class TestRunner {
         System.out.println("Test Results: " + results.getFailCount());
     }
 
-    // Your existing individual test methods
+    @Test
+    void testUIFeatures() {
+
+        Results results =
+                Runner.path("classpath:features/ui")
+                        .outputCucumberJson(true)
+                        .parallel(4);
+
+        assertEquals(0, results.getFailCount(),
+                results.getErrorMessages());
+    }
+
     @Karate.Test
     Karate testFakeStoreAPI() {
         return Karate.run("classpath:features/fakeStoreAPI.feature");
@@ -47,22 +58,12 @@ class TestRunner {
         return Karate .run("classpath:features/api/database.feature");
     }
 
-    // Run ALL tests and generate a single summary report
     @Test
     void testAllFeatures() {
-        // Run all features in parallel
         Results results = Runner.path("classpath:features")
                 .parallel(5);
-        
-        // Karate automatically generates the summary report at:
-        // target/karate-reports/karate-summary.html
-        
-        System.out.println("=========================================");
         System.out.println("Tests completed. Report generated at:");
         System.out.println("target/karate-reports/karate-summary.html");
-        System.out.println("=========================================");
-        
-        // Fail the build if any test failed
         assertEquals(0, results.getFailCount(), "Tests failed: " + results.getFailCount());
     }
 }
