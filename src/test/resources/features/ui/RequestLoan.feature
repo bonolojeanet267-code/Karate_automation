@@ -1,3 +1,4 @@
+@RequestLoan
 Feature: Request Loan
 
   Background:
@@ -6,12 +7,13 @@ Feature: Request Loan
 
   Scenario: Apply For Loan
 
-    Given driver 'https://parabank.parasoft.com/parabank/index.htm'
+    Given driver parabankUrl
 
     And input("input[name='username']", "john")
     And input("input[name='password']", "demo")
     And click("input[value='Log In']")
 
+    And waitFor("a[href*='requestloan.htm']")
     And click("a[href*='requestloan.htm']")
 
     And input('#amount', '10000')

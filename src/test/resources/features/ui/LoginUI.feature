@@ -1,8 +1,9 @@
+@LoginBank
 Feature: Login
 
   Scenario:
 
-    Given driver 'https://parabank.parasoft.com/parabank/index.htm'
+    Given driver parabankUrl
 
     * waitFor("input[name='username']")
 

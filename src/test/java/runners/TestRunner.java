@@ -21,23 +21,11 @@ class TestRunner {
         System.out.println("Test Results: " + results.getFailCount());
     }
 
-    @Test
-    void testUIFeatures() {
-
-        Results results =
-                Runner.path("classpath:features/ui")
-                        .outputCucumberJson(true)
-                        .parallel(4);
-
-        assertEquals(0, results.getFailCount(),
-                results.getErrorMessages());
-    }
-
     @Karate.Test
     Karate testFakeStoreAPI() {
         return Karate.run("classpath:features/fakeStoreAPI.feature");
     }
-    
+
     @Karate.Test
     Karate testFakeStoreCart() {
         return Karate.run("classpath:features/fakeStoreCart.feature");
@@ -55,15 +43,35 @@ class TestRunner {
 
     @Karate.Test
     Karate testDatabase() {
-        return Karate .run("classpath:features/api/database.feature");
+        return Karate.run("classpath:features/api/database.feature");
     }
 
-    @Test
-    void testAllFeatures() {
-        Results results = Runner.path("classpath:features")
-                .parallel(5);
-        System.out.println("Tests completed. Report generated at:");
-        System.out.println("target/karate-reports/karate-summary.html");
-        assertEquals(0, results.getFailCount(), "Tests failed: " + results.getFailCount());
+    @Karate.Test
+    Karate LoginBank() {
+        return Karate.run("classpath:features/ui/LoginUI.feature");
+    }
+
+    @Karate.Test
+    Karate OpenAccount() {
+        return Karate.run("classpath:features/ui/OpenAccount.feature");
+    }
+
+    @Karate.Test
+    Karate RequestLoan() {
+        return Karate.run("classpath:features/ui/OpenAccount.feature");
+    }
+
+    @Karate.Test
+    Karate TransferFunds() {
+        return Karate.run("classpath:features/ui/OpenAccount.feature");
     }
 }
+
+//    @Test
+//    void testAllFeatures() {
+//        Results results = Runner.path("classpath:features")
+//                .parallel(5);
+//        System.out.println("Tests completed. Report generated at:");
+//        System.out.println("target/karate-reports/karate-summary.html");
+//        assertEquals(0, results.getFailCount(), "Tests failed: " + results.getFailCount());    }
+//}

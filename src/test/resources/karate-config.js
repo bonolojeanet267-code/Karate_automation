@@ -5,11 +5,15 @@ function fn() {
         baseUrl: 'https://fakestoreapi.com',
 
         uiUrl: 'https://www.saucedemo.com/',
+        parabankUrl: 'https://parabank.parasoft.com/parabank/index.htm',
+        parabankUser: 'john',
+        parabankPass: 'demo',
 
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
+        parabankUrl: 'https://parabank.parasoft.com/parabank/index.htm',
 
         readTimeout: 30000,
         connectTimeout: 30000

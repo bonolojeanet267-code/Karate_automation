@@ -1,3 +1,4 @@
+@TransferFunds
 Feature: Transfer Funds
 
   Background:
@@ -6,12 +7,13 @@ Feature: Transfer Funds
 
   Scenario: Transfer Money Successfully
 
-    Given driver 'https://parabank.parasoft.com/parabank/index.htm'
+    Given driver parabankUrl
 
     And input("input[name='username']", "john")
     And input("input[name='password']", "demo")
     And click("input[value='Log In']")
 
+    And waitFor("a[href*='transfer.htm']")
     And click("a[href*='transfer.htm']")
 
     And input("#amount", "500")

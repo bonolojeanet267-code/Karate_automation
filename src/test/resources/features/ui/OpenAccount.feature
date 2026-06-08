@@ -1,3 +1,4 @@
+@OpenAccount
 Feature: Open New Account
 
   Background:
@@ -6,12 +7,13 @@ Feature: Open New Account
 
   Scenario: Open Savings Account
 
-    Given driver 'https://parabank.parasoft.com/parabank/index.htm'
+    Given driver parabankUrl
 
     And input("input[name='username']", "john")
     And input("input[name='password']", "demo")
     And click("input[value='Log In']")
 
+    And waitFor("a[href*='openaccount.htm']")
     And click("a[href*='openaccount.htm']")
 
     When click("input[value='Open New Account']")
