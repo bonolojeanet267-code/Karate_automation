@@ -7,7 +7,7 @@ function fn() {
         uiUrl: 'https://www.saucedemo.com/',
         parabankUrl: 'https://parabank.parasoft.com/parabank/index.htm',
         parabankUser: 'john',
-        parabankPass: 'smith',
+        parabankPass: 'demo',
 
         headers: {
             'Content-Type': 'application/json',

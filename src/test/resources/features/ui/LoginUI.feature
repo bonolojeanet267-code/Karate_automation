@@ -8,7 +8,7 @@ Feature: Login
     * waitFor("input[name='username']")
 
     And input("input[name='username']", "john")
-    And input("input[name='password']", "smith")
+    And input("input[name='password']", "demo")
 
     When click("input[value='Log In']")
 
